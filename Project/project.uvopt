@@ -131,6 +131,10 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>ARMRTXEVENTFLAGS</Key>
           <Name>-L70 -Z18 -C0 -M0 -T1</Name>
         </SetRegEntry>
@@ -164,25 +168,25 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>458</LineNumber>
+          <LineNumber>2756</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>28460</Address>
+          <Address>15842</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\User\Test\test.c</Filename>
+          <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/Test/test.c\458</Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\2756</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>2743</LineNumber>
+          <LineNumber>2731</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>15796</Address>
+          <Address>15584</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -191,44 +195,12 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\2743</Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\2731</Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>1408</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>9112</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\User\UseDisp\use_disp.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1408</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>1425</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>9248</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\User\UseDisp\use_disp.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1425</Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>1436</LineNumber>
+          <LineNumber>1445</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>9322</Address>
           <ByteObject>0</ByteObject>
@@ -239,14 +211,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1436</Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1445</Expression>
         </Bp>
         <Bp>
-          <Number>5</Number>
+          <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>2718</LineNumber>
+          <LineNumber>1434</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>15538</Address>
+          <Address>9248</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -255,12 +227,28 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\2718</Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1434</Expression>
         </Bp>
         <Bp>
-          <Number>6</Number>
+          <Number>4</Number>
           <Type>0</Type>
-          <LineNumber>1397</LineNumber>
+          <LineNumber>1417</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>9112</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\User\UseDisp\use_disp.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1417</Expression>
+        </Bp>
+        <Bp>
+          <Number>5</Number>
+          <Type>0</Type>
+          <LineNumber>1406</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>9040</Address>
           <ByteObject>0</ByteObject>
@@ -271,7 +259,23 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1397</Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1406</Expression>
+        </Bp>
+        <Bp>
+          <Number>6</Number>
+          <Type>0</Type>
+          <LineNumber>459</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>28600</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\User\Test\test.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\project\../User/Test/test.c\459</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

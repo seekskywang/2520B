@@ -11,6 +11,7 @@
 #include "timer.h"
 #include <math.h>
 #include "lpc177x_8x_rtc.h"
+extern vu8 nodisp_v_flag;
 const uint8_t Num_1[][9]=
 {"1","2","3","4","5","6","7","8","9"};
 const uint8_t Test_Setitem[][9+1]=
@@ -292,7 +293,15 @@ const uint8_t Setup_Beep[][6+1]=
 	"关闭  ",
 	"合格  ",
 	"不合格",
+	"开路ON",
+};
 
+const uint8_t Setup_Beep1[][7+1]=
+{
+	"关闭  ",
+	"合格  ",
+	"不合格",
+	"开路OFF",
 };
 const uint8_t *Setup_Valueall[]=
 {
@@ -2525,10 +2534,14 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 		case 8:
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BUTON;
-			for(i=0;i<3;i++)
+			for(i=0;i<4;i++)
 			{
-				
-				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Setup_Beep[i],  0);
+				if(Save_Res.Set_Data.openbeep==1)
+				{
+					WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Setup_Beep[i],  0);
+				}else{
+					WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Setup_Beep1[i],  0);
+				}
 			}
 			break;
 		case 9:
@@ -4125,14 +4138,19 @@ void Disp_Button_Fun_Set(vu16 xpos,vu16 ypos,vu8 * Disp_Item,Button_Page_Typedef
 }
 void Disp_Testvalue(int8_t chosen,int32_t eee )
 {
-	if(chosen==RL_FAIL||chosen==RH_FAIL||chosen==ALL_FAIL)
-		Colour.Fword=LCD_COLOR_BLUE;
-	//WriteString_Big(100,92 ,Test_Dispvalue.Main_valuebuff);
-	WriteString_Big(100+32,92 ,DispBuf);
-	if(chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL)
-		Colour.Fword=LCD_COLOR_BLUE;
-	else
+	if(nodisp_v_flag == 1 && Save_Res.Set_Data.openbeep==0)
+	{
 		Colour.Fword=LCD_COLOR_WHITE;
+	}else{
+		if(chosen==RL_FAIL||chosen==RH_FAIL||chosen==ALL_FAIL)
+			Colour.Fword=LCD_COLOR_BLUE;
+		//WriteString_Big(100,92 ,Test_Dispvalue.Main_valuebuff);
+		WriteString_Big(100+32,92 ,DispBuf);
+		if(chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL)
+			Colour.Fword=LCD_COLOR_BLUE;
+		else
+			Colour.Fword=LCD_COLOR_WHITE;
+	}
 	
 	V_BCD_Int(eee);
 	if(Test_Unit.V_Neg)

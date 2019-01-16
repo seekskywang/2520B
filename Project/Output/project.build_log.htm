@@ -21,46 +21,34 @@ Target DLL:      Segger\JL2CM3.dll V2.99.29.0
 Dialog DLL:      TARMP1.DLL V1.26.0.0
  
 <h2>Project:</h2>
-F:\2520B-1220\Project\project.uvproj
+F:\2520B\Project\project.uvproj
 Project File Date:  01/12/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-compiling use_disp.c...
-..\User\UseDisp\use_disp.c(1400): warning:  #175-D: subscript out of range
-        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
-..\User\UseDisp\use_disp.c(1402): warning:  #175-D: subscript out of range
-                Hex_Format(SaveData.Limit_Tab.Comp_Value[9].high.Num, 
-..\User\UseDisp\use_disp.c(1403): warning:  #175-D: subscript out of range
-                        SaveData.Limit_Tab.Comp_Value[9].high.Dot , 6 , 1);//加单位//加单位
-..\User\UseDisp\use_disp.c(1428): warning:  #175-D: subscript out of range
-        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
-..\User\UseDisp\use_disp.c(1430): warning:  #175-D: subscript out of range
-                        Hex_Format(SaveData.Limit_Tab.Comp_Value[9].low.Num, 
-..\User\UseDisp\use_disp.c(1431): warning:  #175-D: subscript out of range
-                        SaveData.Limit_Tab.Comp_Value[9].low.Dot , 6 , 1);//加单位
-..\User\UseDisp\use_disp.c(2841): warning:  #177-D: variable "Black_Select"  was declared but never referenced
-        vu32 Black_Select;
-..\User\UseDisp\use_disp.c(4187): warning:  #223-D: function "UARTPuts" declared implicitly
-        UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4219): warning:  #223-D: function "UARTPuts" declared implicitly
-        UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4232): warning:  #223-D: function "UARTPuts" declared implicitly
-        UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4246): warning:  #223-D: function "UARTPuts" declared implicitly
-        UARTPuts( LPC_UART3, buff);
-..\User\UseDisp\use_disp.c(4238): warning:  #177-D: variable "Send_buff"  was declared but never referenced
-        vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
-..\User\UseDisp\use_disp.c(4277): warning:  #223-D: function "UARTPuts" declared implicitly
-        UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4480): warning:  #177-D: variable "pt"  was declared but never referenced
-        vu8 *pt;
-..\User\UseDisp\use_disp.c: 14 warnings, 0 errors
+compiling test.c...
+..\User\Test\test.c(162): warning:  #223-D: function "RecHandle" declared implicitly
+          RecHandle();
+..\User\Test\test.c(93): warning:  #177-D: variable "addr"  was declared but never referenced
+        uint16_t addr;
+..\User\Test\test.c(94): warning:  #177-D: variable "crc1"  was declared but never referenced
+        static uint16_t crc1;
+..\User\Test\test.c(327): warning:  #177-D: variable "lock_flag"  was declared but never referenced
+        vu8 lock_flag=0;
+..\User\Test\test.c(331): warning:  #177-D: variable "sendtest"  was declared but never referenced
+      vu8 sendtest[5] ={1,2,3,4,5};
+..\User\Test\test.c(3673): warning:  #550-D: variable "kind"  was set but never used
+        u8 kind=0xff;
+..\User\Test\test.c(3775): warning:  #177-D: variable "i"  was declared but never referenced
+        vu8 i;
+..\User\Test\test.c(5102): warning:  #550-D: variable "bytes_written"  was set but never used
+      uint32_t  bytes_written;
+..\User\Test\test.c: 8 warnings, 0 errors
 linking...
-Program Size: Code=72606 RO-data=427834 RW-data=304 ZI-data=19448  
+Program Size: Code=72806 RO-data=427874 RW-data=308 ZI-data=19452  
 FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 14 Warning(s).
+".\Output\project.axf" - 0 Error(s), 8 Warning(s).
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

@@ -28,6 +28,7 @@ const uint8_t USB_dISPVALUE[][9]=
 };
 struct MODS_T g_tModS;
 extern volatile uint32_t timer1_counter;
+vu8 nodisp_v_flag=0;
 vu32 rwatch;
 vu32 vwatch;
 vu8 u3sendflag;
@@ -314,7 +315,7 @@ void Test_Process(void)
 	vu32 keynum=0;
 	float ddd,eee;
 	vu8 key,i;
-    vu8 nodisp_v_flag=0;
+
     vu8 timebuff[10];
     vu8 send_usbbuff[100];
 	vu8 return_flag=0;
@@ -553,7 +554,7 @@ void Test_Process(void)
         }
             
         #else
-		if(Save_Res.Set_Data.V_comp || Save_Res.Set_Data.Res_comp)
+		if(Save_Res.Set_Data.V_comp || Save_Res.Set_Data.Res_comp || Save_Res.Set_Data.openbeep==1)
 		{
             Comp_prompt(comp);
 		}else{
@@ -1352,6 +1353,14 @@ void Setup_Process(void)
 						case 7:
 							Save_Res.Set_Data.Range=3;
 							Uart_Send_Flag=2;
+							break;
+						case 8:
+							if(Save_Res.Set_Data.openbeep==0)
+							{
+								Save_Res.Set_Data.openbeep=1;
+							}else{
+								Save_Res.Set_Data.openbeep=0;
+							}
 							break;
 //						case 8:
 //							break;
@@ -4769,17 +4778,21 @@ int8_t R_Test_Comp(int32_t value)
 
 }
 void Comp_prompt(int8_t value)
-{
+{	
 	if(value==ALL_PASS)
 	{
-		Pass_Led();
-	
+		Pass_Led();	
 	}
 	else
 	{
-		Fail_led();
-	
+		if(Save_Res.Set_Data.openbeep==1)
+		{
+			Fail_led();	
+		}else{
+			No_Comp();
+		}
 	}
+	
 	switch(Save_Res.Set_Data.beep)
 	{
 		case 0://蜂鸣器关闭
@@ -4792,10 +4805,23 @@ void Comp_prompt(int8_t value)
 				Beep_Off();
 			break;
 		case 2://不合格讯响
-			if(value==ALL_PASS)
-				Beep_Off();
-			else
-				Beep_on();
+			if(Save_Res.Set_Data.openbeep==1)
+			{
+				if(value==ALL_PASS)
+					Beep_Off();
+				else
+					Beep_on();
+			}else{
+				if(nodisp_v_flag == 1)
+				{
+					Beep_Off();
+				}else{
+					if(value==ALL_PASS)
+						Beep_Off();
+					else
+						Beep_on();
+				}
+			}
 				
 			
 			break;

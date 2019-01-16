@@ -203,7 +203,7 @@ typedef struct
 	Sort_TypeDef High_Res;
 	Sort_TypeDef Nominal_V;
 	Sort_TypeDef	V_high;
-	
+	vu8 openbeep;
 
 
 }Set_Data_Typedef;
