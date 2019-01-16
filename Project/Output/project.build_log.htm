@@ -1,0 +1,67 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 Microsoft, Microsoft, LIC=RC9PC-7RXIV-SYKVA-1PZTZ-AUNXS-K64YH
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DARMP1.DLL V1.27.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.29.0
+Dialog DLL:      TARMP1.DLL V1.26.0.0
+ 
+<h2>Project:</h2>
+F:\2520B-1220\Project\project.uvproj
+Project File Date:  01/12/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Open1788'
+compiling use_disp.c...
+..\User\UseDisp\use_disp.c(1400): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1402): warning:  #175-D: subscript out of range
+                Hex_Format(SaveData.Limit_Tab.Comp_Value[9].high.Num, 
+..\User\UseDisp\use_disp.c(1403): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].high.Dot , 6 , 1);//加单位//加单位
+..\User\UseDisp\use_disp.c(1428): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1430): warning:  #175-D: subscript out of range
+                        Hex_Format(SaveData.Limit_Tab.Comp_Value[9].low.Num, 
+..\User\UseDisp\use_disp.c(1431): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].low.Dot , 6 , 1);//加单位
+..\User\UseDisp\use_disp.c(2841): warning:  #177-D: variable "Black_Select"  was declared but never referenced
+        vu32 Black_Select;
+..\User\UseDisp\use_disp.c(4187): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4219): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4232): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4246): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART3, buff);
+..\User\UseDisp\use_disp.c(4238): warning:  #177-D: variable "Send_buff"  was declared but never referenced
+        vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
+..\User\UseDisp\use_disp.c(4277): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4480): warning:  #177-D: variable "pt"  was declared but never referenced
+        vu8 *pt;
+..\User\UseDisp\use_disp.c: 14 warnings, 0 errors
+linking...
+Program Size: Code=72606 RO-data=427834 RW-data=304 ZI-data=19448  
+FromELF: creating hex file...
+".\Output\project.axf" - 0 Error(s), 14 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
