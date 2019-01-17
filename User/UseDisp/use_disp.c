@@ -4157,12 +4157,18 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 	if(Test_Unit.V_Neg)
 	{
 		WriteString_Big(100,92+55 ," ");
+		Plc_PosV();
 	}else{
 		if(eee == 0)
 		{
 			WriteString_Big(100,92+55 ," ");
 		}else{
 			WriteString_Big(100,92+55 ,"-");
+		}
+		if(eee <=0 && eee > -200){
+			Plc_PosV();
+		}else{
+			Plc_NegV();
 		}
 	}
 		

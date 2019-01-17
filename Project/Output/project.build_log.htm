@@ -42,26 +42,51 @@ compiling use_disp.c...
                         SaveData.Limit_Tab.Comp_Value[9].low.Dot , 6 , 1);//¼Óµ¥Î»
 ..\User\UseDisp\use_disp.c(2854): warning:  #177-D: variable "Black_Select"  was declared but never referenced
         vu32 Black_Select;
-..\User\UseDisp\use_disp.c(4206): warning:  #223-D: function "UARTPuts" declared implicitly
+..\User\UseDisp\use_disp.c(4160): warning:  #223-D: function "Plc_PosV" declared implicitly
+                Plc_PosV();
+..\User\UseDisp\use_disp.c(4169): warning:  #223-D: function "Plc_PosV" declared implicitly
+                        Plc_PosV();
+..\User\UseDisp\use_disp.c(4171): warning:  #223-D: function "Plc_NegV" declared implicitly
+                        Plc_NegV();
+..\User\UseDisp\use_disp.c(4212): warning:  #223-D: function "UARTPuts" declared implicitly
         UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4238): warning:  #223-D: function "UARTPuts" declared implicitly
+..\User\UseDisp\use_disp.c(4244): warning:  #223-D: function "UARTPuts" declared implicitly
         UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4251): warning:  #223-D: function "UARTPuts" declared implicitly
+..\User\UseDisp\use_disp.c(4257): warning:  #223-D: function "UARTPuts" declared implicitly
         UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4265): warning:  #223-D: function "UARTPuts" declared implicitly
+..\User\UseDisp\use_disp.c(4271): warning:  #223-D: function "UARTPuts" declared implicitly
         UARTPuts( LPC_UART3, buff);
-..\User\UseDisp\use_disp.c(4257): warning:  #177-D: variable "Send_buff"  was declared but never referenced
+..\User\UseDisp\use_disp.c(4263): warning:  #177-D: variable "Send_buff"  was declared but never referenced
         vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
-..\User\UseDisp\use_disp.c(4296): warning:  #223-D: function "UARTPuts" declared implicitly
+..\User\UseDisp\use_disp.c(4302): warning:  #223-D: function "UARTPuts" declared implicitly
         UARTPuts( LPC_UART0, Send_buff);
-..\User\UseDisp\use_disp.c(4499): warning:  #177-D: variable "pt"  was declared but never referenced
+..\User\UseDisp\use_disp.c(4505): warning:  #177-D: variable "pt"  was declared but never referenced
         vu8 *pt;
-..\User\UseDisp\use_disp.c: 14 warnings, 0 errors
+..\User\UseDisp\use_disp.c: 17 warnings, 0 errors
+compiling key.c...
+compiling test.c...
+..\User\Test\test.c(162): warning:  #223-D: function "RecHandle" declared implicitly
+          RecHandle();
+..\User\Test\test.c(93): warning:  #177-D: variable "addr"  was declared but never referenced
+        uint16_t addr;
+..\User\Test\test.c(94): warning:  #177-D: variable "crc1"  was declared but never referenced
+        static uint16_t crc1;
+..\User\Test\test.c(327): warning:  #177-D: variable "lock_flag"  was declared but never referenced
+        vu8 lock_flag=0;
+..\User\Test\test.c(331): warning:  #177-D: variable "sendtest"  was declared but never referenced
+      vu8 sendtest[5] ={1,2,3,4,5};
+..\User\Test\test.c(3674): warning:  #550-D: variable "kind"  was set but never used
+        u8 kind=0xff;
+..\User\Test\test.c(3776): warning:  #177-D: variable "i"  was declared but never referenced
+        vu8 i;
+..\User\Test\test.c(5103): warning:  #550-D: variable "bytes_written"  was set but never used
+      uint32_t  bytes_written;
+..\User\Test\test.c: 8 warnings, 0 errors
 linking...
-Program Size: Code=72818 RO-data=427870 RW-data=308 ZI-data=19452  
+Program Size: Code=72890 RO-data=427870 RW-data=308 ZI-data=19452  
 FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 14 Warning(s).
-Build Time Elapsed:  00:00:01
+".\Output\project.axf" - 0 Error(s), 25 Warning(s).
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

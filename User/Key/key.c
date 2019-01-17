@@ -19,6 +19,17 @@ void No_Comp(void)
 
 
 }
+void Plc_NegV(void)//负电压报警信号
+{
+	GPIO_SetDir(0, (1<<21), 1);
+	GPIO_SetValue(0, (1<<21)); 
+}
+void Plc_PosV(void)//正电压信号
+{
+	GPIO_SetDir(0, (1<<21), 1);
+	GPIO_ClearValue(0, (1<<21)); 
+}
+
 void Plc_pass(void)//合格继电器
 {
     GPIO_SetValue(0, (1<<22));

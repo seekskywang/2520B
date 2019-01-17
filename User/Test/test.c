@@ -354,6 +354,7 @@ void Test_Process(void)
 	Send_UartStart();//开始时的串口发送数据
 	while(GetSystemStatus()==SYS_STATUS_TEST)
 	{
+		
         if(Rtc_intflag)
         {
             Rtc_intflag=0;
