@@ -4141,6 +4141,7 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 	if(nodisp_v_flag == 1 && Save_Res.Set_Data.openbeep==0)
 	{
 		Colour.Fword=LCD_COLOR_WHITE;
+		WriteString_Big(100+32,92 ,DispBuf);
 	}else{
 		if(chosen==RL_FAIL||chosen==RH_FAIL||chosen==ALL_FAIL)
 			Colour.Fword=LCD_COLOR_BLUE;
