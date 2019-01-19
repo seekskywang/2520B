@@ -4786,7 +4786,7 @@ void Comp_prompt(int8_t value)
 	}
 	else
 	{
-		if(Save_Res.Set_Data.openbeep==1)
+		if(Save_Res.Set_Data.openbeep==1 || nodisp_v_flag == 0)
 		{
 			Fail_led();	
 		}else{
