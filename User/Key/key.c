@@ -86,7 +86,8 @@ void Pass_Led(void)
     
     GPIO_SetValue(1, (1<<2));
 	GPIO_ClearValue(5, (1<<4));
-    Plc_pass();
+//    Plc_pass();
+	Plc_Fail();
 
 }
 void All_LedOff(void)
@@ -103,7 +104,8 @@ void Fail_led(void)
 {
 	GPIO_SetValue(5, (1<<4));
 	GPIO_ClearValue(1, (1<<2));
-    Plc_Fail();
+//    Plc_Fail();
+	Plc_pass();
 
 }
 void Power_On_led(void)

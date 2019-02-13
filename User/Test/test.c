@@ -398,6 +398,7 @@ void Test_Process(void)
 		ddd=BCDtoInt((int8_t *)Test_Dispvalue.Main_valuebuff);//电阻
        
 		eee=VBCDtoInt((int8_t *)Test_Dispvalue.Secondvaluebuff);//电压
+		
         if(nodisp_v_flag)
             eee=0;
 		if(timer0_counter>0)//请求数据

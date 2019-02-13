@@ -4147,7 +4147,7 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 			Colour.Fword=LCD_COLOR_BLUE;
 		//WriteString_Big(100,92 ,Test_Dispvalue.Main_valuebuff);
 		WriteString_Big(100+32,92 ,DispBuf);
-		if(chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL)
+		if((chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL))
 			Colour.Fword=LCD_COLOR_BLUE;
 		else
 			Colour.Fword=LCD_COLOR_WHITE;
