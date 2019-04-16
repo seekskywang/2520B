@@ -28,6 +28,7 @@ const uint8_t USB_dISPVALUE[][9]=
 };
 struct MODS_T g_tModS;
 extern volatile uint32_t timer1_counter;
+extern vu8 vflag;
 vu8 nodisp_v_flag=0;
 vu32 rwatch;
 vu32 vwatch;
@@ -594,9 +595,15 @@ void Test_Process(void)
 				if(eee > 0 && eee < 200)
 				{
 					eee = 0;
+					vflag = 1;
 				}else if(eee <=0 && eee > -200){
 					eee = 0;
+					vflag = 1;
+				}else{
+					vflag = 0;
 				}
+			}else{
+				vflag = 0;
 			}
 			Disp_Testvalue(comp,eee);
 			if(Test_Unit.V_Neg)

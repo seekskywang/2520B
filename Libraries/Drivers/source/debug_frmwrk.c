@@ -50,7 +50,7 @@ void MODS_SendWithCRC(uint8_t *_pBuf, uint8_t _ucLen);
 uint8_t (*_db_get_char)(LPC_UART_TypeDef *UARTx);
 uint8_t (*_db_get_val)(LPC_UART_TypeDef *UARTx, uint8_t option, uint8_t numCh, uint32_t * val);
 //Com_TypeDef ComBuf;//´®¿ÚÊÕ·¢»º³å
-
+vu8 vflag;
 extern vu32 Tick_10ms;
 extern vu8 g_mods_timeout;
 extern struct MODS_T g_tModS;
@@ -929,7 +929,8 @@ static uint8_t MODS_ReadRegValue(uint16_t reg_addr, uint8_t *reg_value)
 		{
             if(rwatch > 30000000)
             {
-                sendrvalue = 0;
+                sendrvalue = 0xffffffff;
+				sendunit = 1;
             }else{
                 sendrvalue = rwatch;
                 sendunit = 0;
@@ -941,7 +942,8 @@ static uint8_t MODS_ReadRegValue(uint16_t reg_addr, uint8_t *reg_value)
 		{
             if(rwatch > 30000000)
             {
-                sendrvalue = 0;
+                sendrvalue = 0xffffffff;
+				sendunit = 1;
             }else{
                 sendrvalue = rwatch/1000;
                 sendunit = 1;
@@ -963,15 +965,28 @@ static uint8_t MODS_ReadRegValue(uint16_t reg_addr, uint8_t *reg_value)
 
 		case SLAVE_REG_P02:
 // 			value = (u16)(Test_Value_V.res >> 16);
+			if(vflag == 1)
+			{
+				vwatch = 0;
+			}
             value = (vu16)(vwatch >> 16);
 			break;
 		case SLAVE_REG_P03: 
 // 			value = (u16)(Test_Value_V.res);
+			if(vflag == 1)
+			{
+				vwatch = 0;
+			}
             value = (vu16)(vwatch);
 			break;
 
 		case SLAVE_REG_P04:
-			value = 0;		/* ??????? */
+			if(vflag == 1 || vwatch == 0)
+			{
+				value = 1;
+			}else{
+				value = Test_Unit.V_Neg;		/* ??????? */
+			}
 			break;
 		case SLAVE_REG_P05:
 			value = sendunit;
