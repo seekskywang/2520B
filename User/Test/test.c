@@ -391,7 +391,7 @@ void Test_Process(void)
 			Send_Request();
 			trip_flag=0;
 			return_flag=1;
-			delayMs(1,100);
+//			delayMs(1,100);
 		
 		
 		}
