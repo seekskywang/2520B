@@ -195,7 +195,7 @@ void Power_Process(void)
 	Pass_Led();
 	Power_Off_led();
 	Turnon_backlight();
-	lcd_image((uint8_t *)gImage_open);
+//	lcd_image((uint8_t *)gImage_open);
 	
 	
 	init_timer(0, 20);//定时器初始化   	
@@ -220,7 +220,7 @@ void Power_Process(void)
 //        } 
 //    } 
 
-	Delay(1800);
+//	Delay(1800);
 	Beep_Off();
     i=0;
 //UART_TxCmd(LPC_UART3, ENABLE);
