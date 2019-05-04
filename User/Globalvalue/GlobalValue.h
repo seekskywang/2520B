@@ -246,6 +246,7 @@ typedef struct
 	float V_Clear;
 	vu8 softswitch;
     vu8 fac_num[10];
+	vu8 open;
 
 }Save_Res_Typedef;
 
