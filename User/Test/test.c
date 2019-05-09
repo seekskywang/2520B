@@ -396,9 +396,7 @@ void Test_Process(void)
 			Send_Request();
 			trip_flag=0;
 			return_flag=1;
-			delayMs(1,100);
-		
-		
+			delayMs(1,500);
 		}
 		Uart_Process();
 		ddd=BCDtoInt((int8_t *)Test_Dispvalue.Main_valuebuff);//电阻
@@ -449,6 +447,10 @@ void Test_Process(void)
 		
 		
 		}
+				//校正
+		ddd=BCDtoInt((int8_t *)Test_Dispvalue.Main_valuebuff);//电阻
+       
+		eee=VBCDtoInt((int8_t *)Test_Dispvalue.Secondvaluebuff);//电压
 		
 		if(clear_flag)//清零
 		{
@@ -501,19 +503,22 @@ void Test_Process(void)
 		
 		//1125  1.171  8.84
 
-		//校正
+
+		
 		ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
 		Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].ad_value);
         if(ddd>32000000)
            nodisp_v_flag=1;
         else
             nodisp_v_flag=0;
+		
 		if(Test_Unit.V_dot==3)
 			eee=Debug_Res(eee,Save_Res.Debug_Value[4].standard,Save_Res.Debug_Value[4].ad_value);
 		else
 			eee=Debug_Res(eee,Save_Res.Debug_Value[5].standard,Save_Res.Debug_Value[5].ad_value);
 		
-		
+		if(nodisp_v_flag)
+            eee=0;
 			//ddd-=Save_Res.clear;
 		//分选比较打开
 		if(Save_Res.Set_Data.V_comp)//电压比较
