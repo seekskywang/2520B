@@ -205,8 +205,8 @@ void Power_Process(void)
 	init_timer(0, 20);//定时器初始化   	
 	enable_timer(0);
     
-    init_timer(1, 10);//定时器1初始化10ms
-    enable_timer(1);
+//    init_timer(1, 10);//定时器1初始化10ms
+//    enable_timer(1);
 	Uart_Send_Flag=0;
 //	EEPROM_Init();
 
@@ -362,7 +362,6 @@ void Test_Process(void)
 	Send_UartStart();//开始时的串口发送数据
 	while(GetSystemStatus()==SYS_STATUS_TEST)
 	{
-		
         if(Rtc_intflag)
         {
             Rtc_intflag=0;
@@ -672,12 +671,12 @@ void Test_Process(void)
 	
 		}
 		Colour.Fword=LCD_COLOR_WHITE;
-		if(timer1_counter > 0)
-        {
+//		if(timer1_counter > 0)
+//        {
             Tick_10ms ++;
             MODS_Poll();
-            timer1_counter = 0;
-        }
+//            timer1_counter = 0;
+//        }
 		//	Test_Comp(&Comp_Change);
         if(Button_Page.index==0)
         {

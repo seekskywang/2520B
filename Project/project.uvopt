@@ -132,7 +132,6 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>猬Cw????趏ZQ</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -176,7 +175,7 @@
           <Type>0</Type>
           <LineNumber>2756</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>15842</Address>
+          <Address>15658</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -192,7 +191,7 @@
           <Type>0</Type>
           <LineNumber>2731</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>15584</Address>
+          <Address>15372</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -206,25 +205,9 @@
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>1445</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>9322</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\User\UseDisp\use_disp.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1445</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
           <LineNumber>1434</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>9248</Address>
+          <Address>9148</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -236,25 +219,9 @@
           <Expression>\\project\../User/UseDisp/use_disp.c\1434</Expression>
         </Bp>
         <Bp>
-          <Number>4</Number>
+          <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>1417</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>9112</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\User\UseDisp\use_disp.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1417</Expression>
-        </Bp>
-        <Bp>
-          <Number>5</Number>
-          <Type>0</Type>
-          <LineNumber>1406</LineNumber>
+          <LineNumber>1418</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>9040</Address>
           <ByteObject>0</ByteObject>
@@ -265,76 +232,108 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\project\../User/UseDisp/use_disp.c\1406</Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1418</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>1429</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>9112</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\User\UseDisp\use_disp.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1429</Expression>
+        </Bp>
+        <Bp>
+          <Number>5</Number>
+          <Type>0</Type>
+          <LineNumber>1446</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>9248</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\User\UseDisp\use_disp.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1446</Expression>
         </Bp>
         <Bp>
           <Number>6</Number>
           <Type>0</Type>
-          <LineNumber>1418</LineNumber>
+          <LineNumber>1457</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
+          <Address>9322</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
+          <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\1457</Expression>
         </Bp>
         <Bp>
           <Number>7</Number>
           <Type>0</Type>
-          <LineNumber>1429</LineNumber>
+          <LineNumber>2743</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
+          <Address>15584</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
+          <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\2743</Expression>
         </Bp>
         <Bp>
           <Number>8</Number>
           <Type>0</Type>
-          <LineNumber>1446</LineNumber>
+          <LineNumber>2768</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
+          <Address>15842</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
+          <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\User\UseDisp\use_disp.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\project\../User/UseDisp/use_disp.c\2768</Expression>
         </Bp>
         <Bp>
           <Number>9</Number>
           <Type>0</Type>
-          <LineNumber>1457</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
+          <LineNumber>906</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>50158</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\User\UseDisp\use_disp.c</Filename>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Libraries\Drivers\source\debug_frmwrk.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\project\../Libraries/Drivers/source/debug_frmwrk.c\906</Expression>
         </Bp>
         <Bp>
           <Number>10</Number>
           <Type>0</Type>
-          <LineNumber>2743</LineNumber>
+          <LineNumber>1406</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -350,7 +349,23 @@
         <Bp>
           <Number>11</Number>
           <Type>0</Type>
-          <LineNumber>2768</LineNumber>
+          <LineNumber>1417</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\User\UseDisp\use_disp.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>12</Number>
+          <Type>0</Type>
+          <LineNumber>1445</LineNumber>
           <EnabledFlag>0</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -459,6 +474,11 @@
           <count>18</count>
           <WinNumber>1</WinNumber>
           <ItemText>Test_Unit.V_Neg</ItemText>
+        </Ww>
+        <Ww>
+          <count>19</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>g_tModS.RxBuf</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
