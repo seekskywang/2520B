@@ -702,6 +702,18 @@ const uint8_t	Set_testitem_E[][9+1]=
 };
 const uint8_t Sys_Sys[][20+1]=
 {
+	{"仪器型号  jk2520B"},
+	{"软件版本  Ver:1.8"},
+	{"硬件版本  Ver:1.0"},
+	{"仪器编号"},
+//	{"账号    "},
+//1.8解决手动触发需要两次的问题
+
+
+};
+
+const uint8_t Sys_Sys1[][20+1]=
+{
 	{"仪器型号    2520B"},
 	{"软件版本  Ver:1.8"},
 	{"硬件版本  Ver:1.0"},
@@ -3392,13 +3404,22 @@ void Disp_Sys(void)
 	Colour.Fword=White;
 	Colour.black=LCD_COLOR_TEST_BACK;
 //	WriteString_16(LIST1, FIRSTLINE, User_ListScan_Item[0],  0);
-
-	for(i=0;i<(sizeof(Sys_Sys)/(sizeof(Sys_Sys[0])));i++)
-	//if(i<=sizeof(Sys_Setitem)/(sizeof(Sys_Setitem[0]))/2)
+	if(Save_Res.open == 1)
 	{
-		WriteString_16(LIST1, FIRSTLINE+SPACE1*i, Sys_Sys[i],  0);
+		for(i=0;i<(sizeof(Sys_Sys)/(sizeof(Sys_Sys[0])));i++)
+		//if(i<=sizeof(Sys_Setitem)/(sizeof(Sys_Setitem[0]))/2)
+		{
+			WriteString_16(LIST1, FIRSTLINE+SPACE1*i, Sys_Sys[i],  0);
 
-	}//Save_Res.fac_num
+		}//Save_Res.fac_num
+	}else{
+		for(i=0;i<(sizeof(Sys_Sys1)/(sizeof(Sys_Sys1[0])));i++)
+		//if(i<=sizeof(Sys_Setitem)/(sizeof(Sys_Setitem[0]))/2)
+		{
+			WriteString_16(LIST1, FIRSTLINE+SPACE1*i, Sys_Sys1[i],  0);
+
+		}//Save_Res.fac_num
+	}
     WriteString_16(LIST1+90, FIRSTLINE+SPACE1*3, Save_Res.fac_num,  0);
 //	else
 //	{

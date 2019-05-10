@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Output\project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Output\project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu May 09 14:03:21 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri May 10 13:37:20 2019
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1306,7 +1306,7 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Disp_Sys
 </UL>
 
-<P><STRONG><a name="[e6]"></a>Disp_Sys</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, use_disp.o(.text))
+<P><STRONG><a name="[e6]"></a>Disp_Sys</STRONG> (Thumb, 158 bytes, Stack size 8 bytes, use_disp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = Disp_Sys &rArr; Disp_Button_SysSet &rArr; WriteString_16 &rArr; WriteOneHzChar_16 &rArr; LCD_ShowFontCN_16 &rArr; LCD_SetPoint
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Disp_Sys_Screen
@@ -1327,7 +1327,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Use_SysSetProcess
 </UL>
 
-<P><STRONG><a name="[e8]"></a>Time_Set_Cov</STRONG> (Thumb, 524 bytes, Stack size 56 bytes, use_disp.o(.text))
+<P><STRONG><a name="[e8]"></a>Time_Set_Cov</STRONG> (Thumb, 520 bytes, Stack size 56 bytes, use_disp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = Time_Set_Cov &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pow
@@ -1350,7 +1350,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Freq_Set_Num
 </UL>
 
-<P><STRONG><a name="[f5]"></a>Freq_Set_Cov</STRONG> (Thumb, 262 bytes, Stack size 24 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[f5]"></a>Freq_Set_Cov</STRONG> (Thumb, 260 bytes, Stack size 24 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
@@ -1390,11 +1390,11 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowFontCN_40_55
 </UL>
 
-<P><STRONG><a name="[fb]"></a>Disp_Cp_G</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[fb]"></a>Disp_Cp_G</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowFontCN_40_55
 </UL>
 
-<P><STRONG><a name="[fc]"></a>Disp_Cp_Rp</STRONG> (Thumb, 146 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[fc]"></a>Disp_Cp_Rp</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowFontCN_40_55
 </UL>
 
@@ -1450,11 +1450,11 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowFontCN_40_55
 </UL>
 
-<P><STRONG><a name="[10a]"></a>Disp_Z_r</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[10a]"></a>Disp_Z_r</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowFontCN_40_55
 </UL>
 
-<P><STRONG><a name="[10b]"></a>Disp_Y_d</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[10b]"></a>Disp_Y_d</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowFontCN_40_55
 </UL>
 
@@ -1490,7 +1490,7 @@ Global Symbols
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HW_KeyScsn
 </UL>
 
-<P><STRONG><a name="[113]"></a>Disp_Testvalue</STRONG> (Thumb, 296 bytes, Stack size 16 bytes, use_disp.o(.text))
+<P><STRONG><a name="[113]"></a>Disp_Testvalue</STRONG> (Thumb, 300 bytes, Stack size 16 bytes, use_disp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = Disp_Testvalue &rArr; WriteString_16 &rArr; WriteOneHzChar_16 &rArr; LCD_ShowFontCN_16 &rArr; LCD_SetPoint
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;V_BCD_Int
@@ -1577,7 +1577,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Range_Process
 </UL>
 
-<P><STRONG><a name="[122]"></a>Disp_RangeCount</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[122]"></a>Disp_RangeCount</STRONG> (Thumb, 224 bytes, Stack size 8 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hex_Format
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteString_12
 </UL>
@@ -1588,7 +1588,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteString_16
 </UL>
 
-<P><STRONG><a name="[124]"></a>Disp_Test_Unit_mA</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, use_disp.o(.text), UNUSED)
+<P><STRONG><a name="[124]"></a>Disp_Test_Unit_mA</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, use_disp.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteString_16
 </UL>
 
@@ -2012,7 +2012,7 @@ Global Symbols
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8d]"></a>Power_Process</STRONG> (Thumb, 250 bytes, Stack size 24 bytes, test.o(.text))
+<P><STRONG><a name="[8d]"></a>Power_Process</STRONG> (Thumb, 256 bytes, Stack size 24 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = Power_Process &rArr; Set_Compbcd_float &rArr; Inttofloat &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart3_init
@@ -2052,7 +2052,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
-<P><STRONG><a name="[d9]"></a>BCD_Int</STRONG> (Thumb, 424 bytes, Stack size 32 bytes, test.o(.text))
+<P><STRONG><a name="[d9]"></a>BCD_Int</STRONG> (Thumb, 426 bytes, Stack size 32 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = BCD_Int &rArr; __aeabi_d2uiz
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hex_Format
@@ -2130,7 +2130,7 @@ Global Symbols
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
-<P><STRONG><a name="[8e]"></a>Test_Process</STRONG> (Thumb, 2126 bytes, Stack size 248 bytes, test.o(.text))
+<P><STRONG><a name="[8e]"></a>Test_Process</STRONG> (Thumb, 2158 bytes, Stack size 248 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 564<LI>Call Chain = Test_Process &rArr; MODS_Poll &rArr; RecHandle &rArr; MODS_03H &rArr; MODS_SendWithCRC &rArr; UART3SEND &rArr; UARTPutChar &rArr; UART_Send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MS_Init

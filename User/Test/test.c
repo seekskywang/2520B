@@ -36,6 +36,7 @@ vu8 u3sendflag;
 vu32 Tick_10ms=0;
 vu32 OldTick;
 vu8 g_mods_timeout;
+vu8 powerontest;
 extern vu8 u3sendflag;
 uint32_t keynum;
 const u8 DOT_POS[6]=
@@ -228,6 +229,7 @@ void Power_Process(void)
 	}
 	Beep_Off();
     i=0;
+	powerontest = 1;
 //UART_TxCmd(LPC_UART3, ENABLE);
 	while(GetSystemStatus()==SYS_STATUS_POWER)
 	{
@@ -391,8 +393,13 @@ void Test_Process(void)
 		
 		Colour.black=LCD_COLOR_TEST_MID;
 		
-		if(Save_Res.Set_Data.trip==1&&trip_flag==1)//单次触发
+		if((Save_Res.Set_Data.trip==1&&trip_flag==1) || powerontest == 1)//单次触发
 		{
+			if(powerontest == 1)
+			{
+				delayMs(1,1000);
+			}
+			powerontest = 0;
 			Send_Request();
 			trip_flag=0;
 			return_flag=1;
