@@ -41,6 +41,12 @@ const uint8_t Test_Compvalue[][6+1]=
 	{"打开"}
 
 };
+const uint8_t Disp_VR[][6+1]=
+{
+	{"全部"},
+	{"电压"},
+	{"电阻"}
+};
 const uint8_t Sys_Disp_Main[][12+1]=
 {
 	{"型号        "},
@@ -659,7 +665,7 @@ const uint8_t	Set_testitem[][9+1]=
 {
 	{"触发    :"},
 	{"速度    :"},
-	{"         "},
+	{"显示    :"},
 	{"电阻比较:"},
 	{"电阻下限:"},
 	{"         "},
@@ -2277,9 +2283,23 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	LCD_DrawRect( LIST1+88, FIRSTLINE+SPACE1-2,SELECT_1END , FIRSTLINE+SPACE1*2-4 , Colour.black ) ;//SPACE1
 	WriteString_16(LIST1+88, FIRSTLINE+SPACE1, Test_Speedvalue[Save_Res.Set_Data.speed],  0);
 	
+//显示	
+	Black_Select=(Button_Page->index==3)?1:0;
+	if(Black_Select)
+	{
+		Colour.black=LCD_COLOR_SELECT;
+	
+	}
+	else
+	{
+		Colour.black=LCD_COLOR_TEST_BACK;
+	}
+	
+	LCD_DrawRect( LIST1+88, FIRSTLINE+SPACE1*2-2,SELECT_1END , FIRSTLINE+SPACE1*4-4 , Colour.black ) ;//SPACE1
+	WriteString_16(LIST1+88, FIRSTLINE+SPACE1*2, Test_Compvalue[Save_Res.Set_Data.dispvr],  0);	
 	
 //电阻比较	
-	Black_Select=(Button_Page->index==3)?1:0;
+	Black_Select=(Button_Page->index==4)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2295,7 +2315,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	
 	
 //电阻下限	
-	Black_Select=(Button_Page->index==4)?1:0;
+	Black_Select=(Button_Page->index==5)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2318,7 +2338,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 		
 	
 //电压比较	
-	Black_Select=(Button_Page->index==5)?1:0;
+	Black_Select=(Button_Page->index==6)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2332,7 +2352,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	LCD_DrawRect( LIST1+88, FIRSTLINE+SPACE1*6-2,SELECT_1END , FIRSTLINE+SPACE1*7-4 , Colour.black ) ;//SPACE1
 	WriteString_16(LIST1+88, FIRSTLINE+SPACE1*6, Test_Compvalue[Save_Res.Set_Data.V_comp],  0);
 	//电压下限
-	Black_Select=(Button_Page->index==6)?1:0;
+	Black_Select=(Button_Page->index==7)?1:0;
 	
 	
 	if(Black_Select)
@@ -2353,7 +2373,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	
 
 //量程
-	Black_Select=(Button_Page->index==7)?1:0;
+	Black_Select=(Button_Page->index==8)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2368,7 +2388,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	WriteString_16(LIST2+88, FIRSTLINE, User_Range[Save_Res.Set_Data.Range],  0);
 	
 //讯响
-	Black_Select=(Button_Page->index==8)?1:0;
+	Black_Select=(Button_Page->index==9)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2383,7 +2403,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	WriteString_16(LIST2+88, FIRSTLINE+SPACE1, Setup_Beep[Save_Res.Set_Data.beep],  0);
 	
 	//电阻标称
-	Black_Select=(Button_Page->index==9)?1:0;
+	Black_Select=(Button_Page->index==10)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2408,7 +2428,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 
 //电阻上限
 	
-	Black_Select=(Button_Page->index==10)?1:0;
+	Black_Select=(Button_Page->index==11)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2431,7 +2451,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	
 //电压标称
 	
-	Black_Select=(Button_Page->index==11)?1:0;
+	Black_Select=(Button_Page->index==12)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;
@@ -2452,7 +2472,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	
 //电压上限
 	
-	Black_Select=(Button_Page->index==12)?1:0;
+	Black_Select=(Button_Page->index==13)?1:0;
 	if(Black_Select)
 	{
 		Colour.black=LCD_COLOR_SELECT;

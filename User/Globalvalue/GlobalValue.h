@@ -204,7 +204,7 @@ typedef struct
 	Sort_TypeDef Nominal_V;
 	Sort_TypeDef	V_high;
 	vu8 openbeep;
-
+	vu8 dispvr;
 
 }Set_Data_Typedef;
 typedef struct

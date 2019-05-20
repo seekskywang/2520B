@@ -1473,7 +1473,7 @@ void Setup_Process(void)
 						
 				break;
 				case Key_DOWN:
-					if(Button_Page.index>11)
+					if(Button_Page.index>12)
 						Button_Page.index=0;
 					else
 						Button_Page.index++;
