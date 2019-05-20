@@ -2296,7 +2296,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 	}
 	
 	LCD_DrawRect( LIST1+88, FIRSTLINE+SPACE1*2-2,SELECT_1END , FIRSTLINE+SPACE1*4-4 , Colour.black ) ;//SPACE1
-	WriteString_16(LIST1+88, FIRSTLINE+SPACE1*2, Test_Compvalue[Save_Res.Set_Data.dispvr],  0);	
+	WriteString_16(LIST1+88, FIRSTLINE+SPACE1*2, Disp_VR[Save_Res.Set_Data.dispvr],  0);	
 	
 //电阻比较	
 	Black_Select=(Button_Page->index==4)?1:0;
@@ -2521,22 +2521,13 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 		case 3:
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BUTON;
-			for(i=0;i<2;i++)
+			for(i=0;i<3;i++)
 			{
 				
-				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Test_Compvalue[i],  0);
+				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Disp_VR[i],  0);
 			}
-			break;
-		case 4:
-//			Colour.Fword=White;
-//			Colour.black=LCD_COLOR_TEST_BUTON;
-//			for(i=0;i<5;i++)
-//			{
-//				
-//				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, LevleButton_Tip[i],  0);
-//			}
-			break;
-		case 5:
+		break;	
+		case 3+1:
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BUTON;
 			for(i=0;i<2;i++)
@@ -2545,7 +2536,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Test_Compvalue[i],  0);
 			}
 			break;
-		case 6:
+		case 4+1:
 //			Colour.Fword=White;
 //			Colour.black=LCD_COLOR_TEST_BUTON;
 //			for(i=0;i<5;i++)
@@ -2554,7 +2545,25 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 //				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, LevleButton_Tip[i],  0);
 //			}
 			break;
-		case 7:
+		case 5+1:
+			Colour.Fword=White;
+			Colour.black=LCD_COLOR_TEST_BUTON;
+			for(i=0;i<2;i++)
+			{
+				
+				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, Test_Compvalue[i],  0);
+			}
+			break;
+		case 6+1:
+//			Colour.Fword=White;
+//			Colour.black=LCD_COLOR_TEST_BUTON;
+//			for(i=0;i<5;i++)
+//			{
+//				
+//				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, LevleButton_Tip[i],  0);
+//			}
+			break;
+		case 7+1:
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BUTON;
 			for(i=0;i<5;i++)
@@ -2563,7 +2572,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, User_Range[i],  0);
 			}
 			break;
-		case 8:
+		case 8+1:
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BUTON;
 			for(i=0;i<4;i++)
@@ -2576,7 +2585,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 				}
 			}
 			break;
-		case 9:
+		case 9+1:
 //			Colour.Fword=White;
 //			Colour.black=LCD_COLOR_TEST_BUTON;
 //			for(i=0;i<5;i++)
@@ -2585,7 +2594,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 //				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, LevleButton_Tip[i],  0);
 //			}
 			break;
-		case 10:
+		case 10+1:
 //			Colour.Fword=White;
 //			Colour.black=LCD_COLOR_TEST_BUTON;
 //			for(i=0;i<5;i++)
@@ -2594,7 +2603,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 //				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, LevleButton_Tip[i],  0);
 //			}
 			break;
-		case 11:
+		case 11+1:
 //			Colour.Fword=White;
 //			Colour.black=LCD_COLOR_TEST_BUTON;
 //			for(i=0;i<5;i++)
@@ -2603,7 +2612,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 //				WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, LevleButton_Tip[i],  0);
 //			}
 			break;
-		case 12:
+		case 12+1:
 //			Colour.Fword=White;
 //			Colour.black=LCD_COLOR_TEST_BUTON;
 //			for(i=0;i<5;i++)
@@ -3974,19 +3983,25 @@ void Disp_Y_r(void)
 }
 void Disp_R_X(void)
 {
-	LCD_ShowFontCN_40_55(60,92,40,55,(uint8_t*)Out_Assic+5*40*55/8);//R
-//	
+	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr == 2)
+	{
+		LCD_ShowFontCN_40_55(60,92,40,55,(uint8_t*)Out_Assic+5*40*55/8);//R
+	//	
+		
+		LCD_ShowFontCN_40_55(60+40*7,92,40,55,(uint8_t*)Out_Assic+20*40*55/8);//Ω
 	
-	LCD_ShowFontCN_40_55(60+40*7,92,40,55,(uint8_t*)Out_Assic+20*40*55/8);//Ω
-	LCD_ShowFontCN_40_55(60,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
-//	
-	LCD_ShowFontCN_40_55(60+40*7,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
 	
-	if(Test_Unit.Res_dot)
-		LCD_ShowFontCN_40_55(60+40*6,92,40,55, (uint8_t*)Out_Assic+22*40*55/8);//空格
-	else
-		LCD_ShowFontCN_40_55(60+40*6,92,40,55, (uint8_t*)Out_Assic+17*40*55/8);//m
-
+		if(Test_Unit.Res_dot)
+			LCD_ShowFontCN_40_55(60+40*6,92,40,55, (uint8_t*)Out_Assic+22*40*55/8);//空格
+		else
+			LCD_ShowFontCN_40_55(60+40*6,92,40,55, (uint8_t*)Out_Assic+17*40*55/8);//m
+	}
+	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr == 1)
+	{
+		LCD_ShowFontCN_40_55(60,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
+	//	
+		LCD_ShowFontCN_40_55(60+40*7,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
+	}
 }
 
 void Disp_Rs_Q(void)
@@ -4179,42 +4194,48 @@ void Disp_Button_Fun_Set(vu16 xpos,vu16 ypos,vu8 * Disp_Item,Button_Page_Typedef
 }
 void Disp_Testvalue(int8_t chosen,int32_t eee )
 {
-	if(nodisp_v_flag == 1 && Save_Res.Set_Data.openbeep==0)
+	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr ==2)
 	{
-		Colour.Fword=LCD_COLOR_WHITE;
-		WriteString_Big(100+32,92 ,DispBuf);
-	}else{
-		if(chosen==RL_FAIL||chosen==RH_FAIL||chosen==ALL_FAIL)
-			Colour.Fword=LCD_COLOR_BLUE;
-		//WriteString_Big(100,92 ,Test_Dispvalue.Main_valuebuff);
-		WriteString_Big(100+32,92 ,DispBuf);
-		if((chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL))
-			Colour.Fword=LCD_COLOR_BLUE;
-		else
+		if(nodisp_v_flag == 1 && Save_Res.Set_Data.openbeep==0)
+		{
 			Colour.Fword=LCD_COLOR_WHITE;
+			WriteString_Big(100+32,92 ,DispBuf);
+		}else{
+			if(chosen==RL_FAIL||chosen==RH_FAIL||chosen==ALL_FAIL)
+				Colour.Fword=LCD_COLOR_BLUE;
+			//WriteString_Big(100,92 ,Test_Dispvalue.Main_valuebuff);
+			WriteString_Big(100+32,92 ,DispBuf);
+			
+		}
 	}
 	
-	V_BCD_Int(eee);
-	if(Test_Unit.V_Neg)
+	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr ==1)
 	{
-		WriteString_Big(100,92+55 ," ");
-		Plc_PosV();
-	}else{
-		if(eee == 0)
+		if((chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL))
+				Colour.Fword=LCD_COLOR_BLUE;
+			else
+				Colour.Fword=LCD_COLOR_WHITE;
+		V_BCD_Int(eee);
+		if(Test_Unit.V_Neg)
 		{
 			WriteString_Big(100,92+55 ," ");
-		}else{
-			WriteString_Big(100,92+55 ,"-");
-		}
-		if(eee <=0 && eee > -200){
 			Plc_PosV();
 		}else{
-			Plc_NegV();
+			if(eee == 0)
+			{
+				WriteString_Big(100,92+55 ," ");
+			}else{
+				WriteString_Big(100,92+55 ,"-");
+			}
+			if(eee <=0 && eee > -200){
+				Plc_PosV();
+			}else{
+				Plc_NegV();
+			}
 		}
-	}
 		
-	WriteString_Big(100+32,92+55 ,DispBuf);
-	
+		WriteString_Big(100+32,92+55 ,DispBuf);
+	}
 	Colour.Fword=LCD_COLOR_WHITE;
 	Colour.black=LCD_COLOR_TEST_BACK;
 

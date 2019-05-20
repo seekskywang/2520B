@@ -527,7 +527,7 @@ void Test_Process(void)
             eee=0;
 			//ddd-=Save_Res.clear;
 		//·ÖÑ¡±È½Ï´ò¿ª
-		if(Save_Res.Set_Data.V_comp)//µçÑ¹±È½Ï
+		if(Save_Res.Set_Data.V_comp && Save_Res.Set_Data.dispvr != 2)//µçÑ¹±È½Ï
 		{
 			chosen=V_Test_Comp(eee);
             if(Test_Unit.V_Neg==0)//©µçÑ¹µÄÊ±ºò±¨¾¯
@@ -535,7 +535,7 @@ void Test_Process(void)
 		
 		
 		}
-		if(Save_Res.Set_Data.Res_comp)//µç×è±È½Ï´ò¿ª
+		if(Save_Res.Set_Data.Res_comp && Save_Res.Set_Data.dispvr != 1)//µç×è±È½Ï´ò¿ª
 		{
 			chosen1=R_Test_Comp(ddd);
 //			if(R_Test_Comp(ddd)==ALL_PASS)
@@ -1103,22 +1103,28 @@ void Setup_Process(void)
 							
 							break;
 						case 3:
+							Save_Res.Set_Data.dispvr=0;
+							
+								
+							
+							break;
+						case 3+1:
 							Save_Res.Set_Data.Res_comp=0;
 							Uart_Send_Flag=2;
 							//SaveData.Main_Func.Level=0;
 							break;
-						case 4:
+						case 4+1:
 //							if(Save_Res.Set_Data.Res_low.Num<9000)
 //								Save_Res.Set_Data.Res_low.Num+=1000;
 //							else
 //								Save_Res.Set_Data.Res_low.Num-=9000;
 //							
 							break;
-						case 5:
+						case 5+1:
 							Save_Res.Set_Data.V_comp=0;
 							Uart_Send_Flag=2;
 							break;
-						case 6:
+						case 6+1:
 							
 //							if(Save_Res.Set_Data.V_low.Num<9000)
 //								Save_Res.Set_Data.V_low.Num+=1000;
@@ -1126,35 +1132,35 @@ void Setup_Process(void)
 //								Save_Res.Set_Data.V_low.Num-=9000;
 //							
 							break;
-						case 7:
+						case 7+1:
 							Save_Res.Set_Data.Range=0;
 							Uart_Send_Flag=2;
 							break;
-						case 8:
+						case 8+1:
 							Save_Res.Set_Data.beep=0;
 							break;
-						case 9:
+						case 9+1:
 //							if(Save_Res.Set_Data.Nominal_Res.Num<9000)
 //								Save_Res.Set_Data.Nominal_Res.Num+=1000;
 //							else
 //								Save_Res.Set_Data.Nominal_Res.Num-=9000;
 //							Uart_Send_Flag=2;
 							break;
-						case 10:
+						case 10+1:
 //							if(Save_Res.Set_Data.High_Res.Num<9000)
 //								Save_Res.Set_Data.High_Res.Num+=1000;
 //							else
 //								Save_Res.Set_Data.High_Res.Num-=9000;
 //							Uart_Send_Flag=2;
 							break;
-						case 11:
+						case 11+1:
 //							if(Save_Res.Set_Data.Nominal_V.Num<9000)
 //								Save_Res.Set_Data.Nominal_V.Num+=1000;
 //							else
 //								Save_Res.Set_Data.Nominal_V.Num-=9000;
 //							Uart_Send_Flag=2;
 							break;
-						case 12:
+						case 12+1:
 //							if(Save_Res.Set_Data.V_high.Num<9000)
 //								Save_Res.Set_Data.V_high.Num+=1000;
 //							else
@@ -1197,10 +1203,16 @@ void Setup_Process(void)
 							
 							break;
 						case 3:
+							Save_Res.Set_Data.dispvr=1;
+							
+								
+							
+							break;
+						case 3+1:
 							Save_Res.Set_Data.Res_comp=1;
 							Uart_Send_Flag=2;
 							break;
-						case 4:
+						case 4+1:
 //							if(Save_Res.Set_Data.Res_low.Num%1000<900)
 //								Save_Res.Set_Data.Res_low.Num+=100;
 //							else
@@ -1210,22 +1222,22 @@ void Setup_Process(void)
 //								
 //							}
 							break;
-						case 5:
+						case 5+1:
 							Save_Res.Set_Data.V_comp=1;
 							Uart_Send_Flag=2;
 							break;
-						case 6:
+						case 6+1:
 //							if(Save_Res.Set_Data.V_low.Num%1000<900)
 //								Save_Res.Set_Data.V_low.Num+=100;
 //							else
 //								Save_Res.Set_Data.V_low.Num-=900;
 //							Uart_Send_Flag=2;
 							break;
-						case 7:
+						case 7+1:
 							Save_Res.Set_Data.Range=1;
 							Uart_Send_Flag=2;
 							break;
-						case 8:
+						case 8+1:
 							Save_Res.Set_Data.beep=1;
 							break;
 //						case 9:
@@ -1281,17 +1293,23 @@ void Setup_Process(void)
 						case 2:
 							break;
 						case 3:
+							Save_Res.Set_Data.dispvr=2;
+							
+								
+							
 							break;
-						case 4:
+						case 3+1:
+							break;
+						case 4+1:
 //							if(Save_Res.Set_Data.Res_low.Num%100<90)
 //								Save_Res.Set_Data.Res_low.Num+=10;
 //							else
 //								Save_Res.Set_Data.Res_low.Num-=90;
 //							Uart_Send_Flag=2;
 							break;
-						case 5:
+						case 5+1:
 							break;
-						case 6:
+						case 6+1:
 //							if(Save_Res.Set_Data.V_low.Num%100<90)
 //								Save_Res.Set_Data.V_low.Num+=10;
 //							else
@@ -1299,11 +1317,11 @@ void Setup_Process(void)
 //							Uart_Send_Flag=2;
 							
 							break;
-						case 7:
+						case 7+1:
 							Save_Res.Set_Data.Range=2;
 							Uart_Send_Flag=2;
 							break;
-						case 8:
+						case 8+1:
 							Save_Res.Set_Data.beep=2;
 							break;
 //						case 9:
@@ -1357,29 +1375,29 @@ void Setup_Process(void)
 						case 2:
 							
 							break;
-						case 3:
+						case 3+1:
 							break;
-						case 4:
+						case 4+1:
 //							if(Save_Res.Set_Data.Res_low.Num%10<9)
 //								Save_Res.Set_Data.Res_low.Num+=1;
 //							else
 //								Save_Res.Set_Data.Res_low.Num-=9;
 //							Uart_Send_Flag=2;
 							break;
-						case 5:
+						case 5+1:
 							break;
-						case 6:
+						case 6+1:
 							if(Save_Res.Set_Data.V_low.Num%10<9)
 								Save_Res.Set_Data.V_low.Num+=1;
 							else
 								Save_Res.Set_Data.V_low.Num-=9;
 							Uart_Send_Flag=2;
 							break;
-						case 7:
+						case 7+1:
 							Save_Res.Set_Data.Range=3;
 							Uart_Send_Flag=2;
 							break;
-						case 8:
+						case 8+1:
 							if(Save_Res.Set_Data.openbeep==0)
 							{
 								Save_Res.Set_Data.openbeep=1;
@@ -1426,10 +1444,10 @@ void Setup_Process(void)
 				case Key_F5:
 					switch(Button_Page.index)
 					{
-						case 4:
-						case 9:
+						case 4+1:
+						case 9+1:
 							break;
-						case 7:	
+						case 7+1:	
 							Save_Res.Set_Data.Range=4;
 							Uart_Send_Flag=2;
 						break;
@@ -1465,11 +1483,14 @@ void Setup_Process(void)
 					if(Button_Page.index==0)
 						Button_Page.index=1;
 					else
-					if(Button_Page.index<=6)
+					if(Button_Page.index<=2)
+						Button_Page.index+=7;
+					else if(Button_Page.index>2 && Button_Page.index<=7)
 						Button_Page.index+=6;
+					else if(Button_Page.index>7 && Button_Page.index<=9)
+						Button_Page.index-=7;
 					else
-						Button_Page.index-=5;
-					
+						Button_Page.index-=6;
 						
 				break;
 				case Key_DOWN:
@@ -1552,39 +1573,39 @@ void Setup_Process(void)
 				//break;
 				switch(Button_Page.index)
 				{
-					case 4:
+					case 4+1:
 						Coordinates.xpos=LIST1+88;
 						Coordinates.ypos=FIRSTLINE+SPACE1*4;
 						Coordinates.lenth=76;
 						Save_Res.Set_Data.Res_low=Disp_Set_Num(&Coordinates);
 						
 						break;
-					case 6:
+					case 6+1:
 						Coordinates.xpos=LIST1+88;
 						Coordinates.ypos=FIRSTLINE+SPACE1*7;
 						Coordinates.lenth=76;
 						Save_Res.Set_Data.V_low=Disp_Set_CompNum(&Coordinates);
 						
 						break;
-					case 9:
+					case 9+1:
 						Coordinates.xpos=LIST2+88;
 						Coordinates.ypos=FIRSTLINE+SPACE1*3;
 						Coordinates.lenth=76;
 						Save_Res.Set_Data.Nominal_Res=Disp_Set_Num(&Coordinates);
 						break;
-					case 10:
+					case 10+1:
 						Coordinates.xpos=LIST2+88;
 						Coordinates.ypos=FIRSTLINE+SPACE1*4;
 						Coordinates.lenth=76;
 						Save_Res.Set_Data.High_Res=Disp_Set_Num(&Coordinates);
 						break;
-					case 11:
+					case 11+1:
 						Coordinates.xpos=LIST2+88;
 						Coordinates.ypos=FIRSTLINE+SPACE1*6;
 						Coordinates.lenth=76;
 						Save_Res.Set_Data.Nominal_V=Disp_Set_CompNum(&Coordinates);
 						break;
-					case 12:
+					case 12+1:
 						Coordinates.xpos=LIST2+88;
 						Coordinates.ypos=FIRSTLINE+SPACE1*7;
 						Coordinates.lenth=76;
@@ -4959,7 +4980,8 @@ void Set_Compbcd_float(void)//°ÑÉèÖÃ±È½ÏÊı¾İ×ª»»ÎªfloatÊı¾İ  °ÑÕâ¸öÊı¾İÓë±ê³ÆÖµ½
 	
 	
 	}//ABS±È½Ï
-	
+	if(Save_Res.Set_Data.dispvr > 2)
+		Save_Res.Set_Data.dispvr=0;
 
 
 
