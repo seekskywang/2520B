@@ -508,7 +508,7 @@ void Test_Process(void)
 //            nodisp_v_flag=0;
 		
 		//1125  1.171  8.84
-
+		
 
 		
 		ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
@@ -530,16 +530,15 @@ void Test_Process(void)
 		if(Save_Res.Set_Data.V_comp && Save_Res.Set_Data.dispvr != 2)//电压比较
 		{
 			chosen=V_Test_Comp(eee);
-            if(Test_Unit.V_Neg==0)//﹣电压的时候报警
-                chosen=VL_FAIL;
+			
 		
 		
 		}
 		if(Save_Res.Set_Data.Res_comp && Save_Res.Set_Data.dispvr != 1)//电阻比较打开
 		{
 			chosen1=R_Test_Comp(ddd);
-//			if(R_Test_Comp(ddd)==ALL_PASS)
-//				;
+	//			if(R_Test_Comp(ddd)==ALL_PASS)
+	//				;
 		
 		}
 		if(chosen==ALL_PASS&&chosen1==ALL_PASS)
@@ -563,23 +562,23 @@ void Test_Process(void)
 				
 		
 		}
-        #ifdef OVER_NO_ALARM
-        if(nodisp_v_flag==0)
-            Comp_prompt(comp);
-        else
-        {
-            No_Comp();
-        
-        }
-            
-        #else
+		#ifdef OVER_NO_ALARM
+		if(nodisp_v_flag==0)
+			Comp_prompt(comp);
+		else
+		{
+			No_Comp();
+		
+		}
+			
+		#else
 		if(Save_Res.Set_Data.V_comp || Save_Res.Set_Data.Res_comp || Save_Res.Set_Data.openbeep==1)
 		{
-            Comp_prompt(comp);
+			Comp_prompt(comp);
 		}else{
 			No_Comp();
 		}
-        #endif
+		#endif
 		if(return_flag)	
 		{
             rwatch = (int)ddd;
@@ -622,6 +621,7 @@ void Test_Process(void)
 				vflag = 0;
 			}
 			Disp_Testvalue(comp,eee);
+			
 			if(Test_Unit.V_Neg)
 			{
 				*(UserBuffer+9)=' ';
@@ -1503,7 +1503,7 @@ void Setup_Process(void)
 				break;
 				case Key_UP:
 					if(Button_Page.index<1)
-						Button_Page.index=11;
+						Button_Page.index=13;
 					else
 						Button_Page.index--;
 					
