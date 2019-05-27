@@ -27,29 +27,47 @@ Project File Date:  01/12/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-compiling test.c...
-..\User\Test\test.c(164): warning:  #223-D: function "RecHandle" declared implicitly
-          RecHandle();
-..\User\Test\test.c(95): warning:  #177-D: variable "addr"  was declared but never referenced
-        uint16_t addr;
-..\User\Test\test.c(96): warning:  #177-D: variable "crc1"  was declared but never referenced
-        static uint16_t crc1;
-..\User\Test\test.c(335): warning:  #177-D: variable "lock_flag"  was declared but never referenced
-        vu8 lock_flag=0;
-..\User\Test\test.c(339): warning:  #177-D: variable "sendtest"  was declared but never referenced
-      vu8 sendtest[5] ={1,2,3,4,5};
-..\User\Test\test.c(3725): warning:  #550-D: variable "kind"  was set but never used
-        u8 kind=0xff;
-..\User\Test\test.c(3827): warning:  #177-D: variable "i"  was declared but never referenced
-        vu8 i;
-..\User\Test\test.c(5155): warning:  #550-D: variable "bytes_written"  was set but never used
-      uint32_t  bytes_written;
-..\User\Test\test.c: 8 warnings, 0 errors
+compiling use_disp.c...
+..\User\UseDisp\use_disp.c(1428): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1430): warning:  #175-D: subscript out of range
+                Hex_Format(SaveData.Limit_Tab.Comp_Value[9].high.Num, 
+..\User\UseDisp\use_disp.c(1431): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].high.Dot , 6 , 1);//加单位//加单位
+..\User\UseDisp\use_disp.c(1456): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1458): warning:  #175-D: subscript out of range
+                        Hex_Format(SaveData.Limit_Tab.Comp_Value[9].low.Num, 
+..\User\UseDisp\use_disp.c(1459): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].low.Dot , 6 , 1);//加单位
+..\User\UseDisp\use_disp.c(2896): warning:  #177-D: variable "Black_Select"  was declared but never referenced
+        vu32 Black_Select;
+..\User\UseDisp\use_disp.c(4223): warning:  #223-D: function "Plc_PosV" declared implicitly
+                        Plc_PosV();
+..\User\UseDisp\use_disp.c(4238): warning:  #223-D: function "Plc_PosV" declared implicitly
+                                Plc_PosV();
+..\User\UseDisp\use_disp.c(4240): warning:  #223-D: function "Plc_NegV" declared implicitly
+                                Plc_NegV();
+..\User\UseDisp\use_disp.c(4281): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4313): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4326): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4340): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART3, buff);
+..\User\UseDisp\use_disp.c(4332): warning:  #177-D: variable "Send_buff"  was declared but never referenced
+        vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
+..\User\UseDisp\use_disp.c(4371): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4574): warning:  #177-D: variable "pt"  was declared but never referenced
+        vu8 *pt;
+..\User\UseDisp\use_disp.c: 17 warnings, 0 errors
 linking...
-Program Size: Code=73498 RO-data=428046 RW-data=308 ZI-data=19452  
+Program Size: Code=73474 RO-data=428046 RW-data=308 ZI-data=19452  
 FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 8 Warning(s).
-Build Time Elapsed:  00:00:02
+".\Output\project.axf" - 0 Error(s), 17 Warning(s).
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -4222,8 +4222,12 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 			WriteString_Big(100,92+55 ," ");
 			Plc_PosV();
 		}else{
-			if(Test_Unit.V_Neg==0 && eee != 0)//﹣电压的时候报警
+			if(Test_Unit.V_Neg==0 && eee != 0)
+			{//﹣电压的时候报警
+				Colour.Fword=LCD_COLOR_BLUE;
 				chosen=VL_FAIL;
+			}
+
 			if(eee == 0)
 			{
 				WriteString_Big(100,92+55 ," ");
