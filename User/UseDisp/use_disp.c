@@ -12,6 +12,7 @@
 #include <math.h>
 #include "lpc177x_8x_rtc.h"
 extern vu8 nodisp_v_flag;
+vu8 negvalm;
 const uint8_t Num_1[][9]=
 {"1","2","3","4","5","6","7","8","9"};
 const uint8_t Test_Setitem[][9+1]=
@@ -4212,7 +4213,7 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 	
 	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr ==1)
 	{
-		if(nodisp_v_flag == 0 && (chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL))
+		if((nodisp_v_flag == 0 || Save_Res.Set_Data.openbeep==1) && (chosen==VH_FAIL||chosen==VL_FAIL||chosen==ALL_FAIL))
 				Colour.Fword=LCD_COLOR_BLUE;
 			else
 				Colour.Fword=LCD_COLOR_WHITE;
@@ -4221,11 +4222,15 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 		{
 			WriteString_Big(100,92+55 ," ");
 			Plc_PosV();
+			negvalm = 0;
 		}else{
 			if(Test_Unit.V_Neg==0 && eee != 0)
 			{//﹣电压的时候报警
 				Colour.Fword=LCD_COLOR_BLUE;
 				chosen=VL_FAIL;
+				negvalm = 1;
+			}else{
+				negvalm = 0;
 			}
 
 			if(eee == 0)

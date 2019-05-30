@@ -38,6 +38,7 @@ vu32 OldTick;
 vu8 g_mods_timeout;
 vu8 powerontest;
 extern vu8 u3sendflag;
+extern vu8 negvalm;
 uint32_t keynum;
 const u8 DOT_POS[6]=
 {	
@@ -4807,7 +4808,7 @@ int8_t V_Test_Comp(int32_t value)
 	
 	if(value>Save_Res.Set_Data.V_high.mid_data)
 		data=VH_FAIL;
-	else if(value<Save_Res.Set_Data.V_low.mid_data)
+	else if(value<Save_Res.Set_Data.V_low.mid_data || negvalm == 1)
 		data=VL_FAIL;
 	else
 		data=ALL_PASS;

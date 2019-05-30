@@ -131,11 +131,6 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>DLGUARM</Key>
-          <Name>猬紈ld?ld?趏ze</Name>
-        </SetRegEntry>
-        <SetRegEntry>
-          <Number>0</Number>
           <Key>PWSTATINFO</Key>
           <Name>200,50,700</Name>
         </SetRegEntry>
@@ -306,6 +301,16 @@
           <count>26</count>
           <WinNumber>1</WinNumber>
           <ItemText>Save_Res.Set_Data.Res_low.mid_data</ItemText>
+        </Ww>
+        <Ww>
+          <count>27</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>DispBuf</ItemText>
+        </Ww>
+        <Ww>
+          <count>28</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>value,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
