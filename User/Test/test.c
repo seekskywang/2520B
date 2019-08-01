@@ -28,10 +28,13 @@ const uint8_t USB_dISPVALUE[][9]=
 };
 struct MODS_T g_tModS;
 extern volatile uint32_t timer1_counter;
+extern volatile uint32_t stable_counter;
 extern vu8 vflag;
 vu8 nodisp_v_flag=0;
+vu16 stabletime;
 vu32 rwatch;
 vu32 vwatch;
+vu32 testwatch[500];
 vu8 u3sendflag;
 vu32 Tick_10ms=0;
 vu32 OldTick;
@@ -319,6 +322,8 @@ void Power_Process(void)
 //测试程序
 void Test_Process(void)
 {
+
+	static vu16 j;
 	Button_Page_Typedef Button_Page;
 //	Main_Second_TypeDed Main_Second;//主参数和幅参赛的序号
 	vu32 keynum=0;
@@ -515,10 +520,13 @@ void Test_Process(void)
 		ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
 		Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].ad_value);
         if(ddd>32000000)
+		{
            nodisp_v_flag=1;
-        else
+			stable_counter = 0;
+			j = 0;
+        }else{
             nodisp_v_flag=0;
-		
+		}
 		if(Test_Unit.V_dot==3)
 			eee=Debug_Res(eee,Save_Res.Debug_Value[4].standard,Save_Res.Debug_Value[4].ad_value);
 		else
@@ -584,6 +592,14 @@ void Test_Process(void)
 		{
             rwatch = (int)ddd;
             vwatch = (int)eee * 10;
+			testwatch[j] = rwatch;
+			
+			if(j < 499)
+				j++;
+			if(j == 5)
+			{
+				stabletime = stable_counter * 20;
+			}
 			BCD_Int(ddd);//DOT_POS	
 			for(i=0;i<5;i++)
 			{

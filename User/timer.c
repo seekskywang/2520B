@@ -28,7 +28,7 @@ volatile uint32_t timer0_counter = 0;
 volatile uint32_t timer1_counter = 0;
 volatile uint32_t timer2_counter = 0;
 volatile uint32_t timer3_counter = 0;
-
+volatile uint32_t stable_counter = 0;
 
 
 /*****************************************************************************
@@ -111,6 +111,7 @@ void TIMER0_IRQHandler (void)
 {  
     LPC_TIM0->IR = 0x1<<0;		/* clear interrupt flag */
   timer0_counter++;
+  stable_counter++;
   return;
 }
 
