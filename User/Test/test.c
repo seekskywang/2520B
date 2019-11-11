@@ -16,7 +16,7 @@
 #include "debug_frmwrk.h"
 #include "lpc177x_8x_gpio.h"
 #include "open.h"
-const char *PASSWORD="12345789";
+const char *PASSWORD="12345689";
 const uint8_t USB_dISPVALUE[][9]=
 {
 	"RH_FAIL ",
