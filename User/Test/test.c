@@ -806,8 +806,11 @@ void Test_Process(void)
                             /* Initialize the mass storage and scsi interfaces */
                             rc = MS_Init( &blkSize, &numBlks, inquiryResult );
                             if (rc == OK) {
-                                rc = FAT_Init();   /* Initialize the FAT16 file system */    
-                            Write_Usbdata ( "时间     电阻		电压		分选\r\n" ,27);	
+                                rc = FAT_Init();   /* Initialize the FAT16 file system */   
+														if(Save_Res.Sys_Setvalue.lanage )
+															Write_Usbdata ( "Times   Resistance		Voltage		Sorting\r\n" ,27);	
+														else
+															Write_Usbdata ( "时间     电阻		电压		分选\r\n" ,27);	
                             usb_oenflag=1;                                
                     
                             } 
@@ -5436,14 +5439,23 @@ void input_password(Disp_Coordinates_Typedef *Coordinates )
 			//LCD_DrawRect( Coordinates->xpos, Coordinates->ypos,Coordinates->xpos+Coordinates->lenth , Coordinates->ypos+16 , Red );
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BACK;
+				if(Save_Res.Sys_Setvalue.lanage )
+						WriteString_16(Coordinates->xpos-38, Coordinates->ypos, "PassWord:",  0);
+				else
             WriteString_16(Coordinates->xpos-38, Coordinates->ypos, "密码:",  0);
-			WriteString_16(Coordinates->xpos+15, Coordinates->ypos, ( uint8_t *)Disp_buff,  0);
+				WriteString_16(Coordinates->xpos+15, Coordinates->ypos, ( uint8_t *)Disp_buff,  0);
             if(password_flag)
-                WriteString_16(Coordinates->xpos, Coordinates->ypos+20, "密码错误",  0);
+								if(Save_Res.Sys_Setvalue.lanage )
+									WriteString_16(Coordinates->xpos, Coordinates->ypos+20, "PassWord Error!",  0);
+								else
+									WriteString_16(Coordinates->xpos, Coordinates->ypos+20, "密码错误",  0);
             else
                LCD_DrawRect( Coordinates->xpos, Coordinates->ypos+20,Coordinates->xpos+100 , Coordinates->ypos+40, LCD_COLOR_TEST_BACK );
                // WriteString_16(Coordinates->xpos, Coordinates->ypos, "         ",  0);
-            WriteString_16(Coordinates->xpos, Coordinates->ypos-20, "请输入8位密码",  0);
+							if(Save_Res.Sys_Setvalue.lanage )
+								WriteString_16(Coordinates->xpos, Coordinates->ypos-20, "Please input 8-bits PassWord",  0);
+							else
+								WriteString_16(Coordinates->xpos, Coordinates->ypos-20, "请输入8位密码",  0);
 			//dispflag=0;
 		}
 	
@@ -5711,13 +5723,19 @@ void input_num(Disp_Coordinates_Typedef *Coordinates )
 			//LCD_DrawRect( Coordinates->xpos, Coordinates->ypos,Coordinates->xpos+Coordinates->lenth , Coordinates->ypos+16 , Red );
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BACK;
+					if(Save_Res.Sys_Setvalue.lanage )
+						 WriteString_16(Coordinates->xpos-70, Coordinates->ypos, "Factory Num:",  0);
+					else
             WriteString_16(Coordinates->xpos-70, Coordinates->ypos, "出厂编号:",  0);
-			WriteString_16(Coordinates->xpos+15, Coordinates->ypos, ( uint8_t *)Disp_buff,  0);
+					WriteString_16(Coordinates->xpos+15, Coordinates->ypos, ( uint8_t *)Disp_buff,  0);
 //            if(password_flag)
 //                WriteString_16(Coordinates->xpos, Coordinates->ypos+20, "密码错误",  0);
 //            else
 //               LCD_DrawRect( Coordinates->xpos, Coordinates->ypos+20,Coordinates->xpos+100 , Coordinates->ypos+40, LCD_COLOR_TEST_BACK );
                // WriteString_16(Coordinates->xpos, Coordinates->ypos, "         ",  0);
+					if(Save_Res.Sys_Setvalue.lanage )
+						WriteString_16(Coordinates->xpos, Coordinates->ypos-20, "Please input 8-bits Factory Num",  0);
+					else
             WriteString_16(Coordinates->xpos, Coordinates->ypos-20, "请输入8位出厂编号",  0);
 		}
 	

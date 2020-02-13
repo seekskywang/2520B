@@ -21,11 +21,11 @@
 ".\output\debug_frmwrk.o"
 ".\output\lpc177x_8x_pinsel.o"
 ".\output\lpc177x_8x_eeprom.o"
-".\output\lpc177x_8x_rtc_1.o"
+".\output\lpc177x_8x_rtc.o"
 ".\output\usbhost_fat.o"
 ".\output\usbhost_lpc17xx.o"
 ".\output\usbhost_ms.o"
-".\output\rtc_1.o"
+".\output\rtc.o"
 --strict --scatter ".\Output\project.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
