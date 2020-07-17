@@ -24,6 +24,22 @@ const uint8_t Test_Setitem[][9+1]=
 	{"µçÑ¹ÉÏÏÞ:"},
 	{"µçÑ¹ÏÂÏÞ:"},
 };
+
+const uint8_t Test_Setitem_E[][9+1]=
+{
+	{"TRIG    :"},
+	{"R_HIGH  :"},
+	{"R_LOW   :"},
+	{"RANGE   :"},
+    {"V_HIGH  :"},
+	{"V_LOW   :"},
+	
+	{"Vm:"},
+	{"Im:"},
+	{"CORR:"}
+	
+};
+
 const uint8_t Test_Tirpvalue[][6+1]=
 {
 	{"×Ô¶¯"},
@@ -702,20 +718,7 @@ const uint8_t CorrectCable_Button_Tip[][7+1]=  //±È½Ï½çÃæÑ¡ÔñÊ±ºòµÄÏÂÃæµÄÌáÊ¾·ûº
 //    {"SEQ "},
 //    {"SETP "}
 //};
-const uint8_t Test_Setitem_E[][9+1]=
-{
-	{"FUNC    :"},
-	{"FREQ    :"},
-	{"LEVEL   :"},
-	{"RANGE   :"},
-    {"BIAS    :"},
-	{"SPEED   :"},
-	
-	{"Vm:"},
-	{"Im:"},
-	{"CORR:"}
-	
-};
+
 const uint8_t  Range_Item[][7+1]=
 {
 	{"¹¦ÄÜ  :"},
@@ -780,7 +783,7 @@ const uint8_t	Set_testitem_E[][9+1]=
 //	{"DCR RNG :"},
 //	{"DC LEV  :"},
 //	{"REF A   :"}
-	{"TRIP    :"},
+	{"TRIG    :"},
 	{"SPEED   :"},
 	{"DISP    :"},
 	{"R_COMP  :"},
@@ -804,7 +807,7 @@ const uint8_t	Set_testitem_E[][9+1]=
 const uint8_t Sys_Sys[][20+1]=
 {
 	{"ÒÇÆ÷ÐÍºÅ  jk2520B"},
-	{"Èí¼þ°æ±¾  Ver:2.0"},
+	{"Èí¼þ°æ±¾  Ver:2.1"},
 	{"Ó²¼þ°æ±¾  Ver:1.0"},
 	{"ÒÇÆ÷±àºÅ"},
 //	{"ÕËºÅ    "},
@@ -816,7 +819,7 @@ const uint8_t Sys_Sys[][20+1]=
 const uint8_t Sys_Sys_E[][20+1]=
 {
 	{"INST MODEL: jk2520B "},
-	{"SOFT VER:   Ver:2.0"},
+	{"SOFT VER:   Ver:2.1"},
 	{"HARD VER:   Ver:1.0"},
 	{"SERIALNO:"},
 
@@ -825,7 +828,7 @@ const uint8_t Sys_Sys_E[][20+1]=
 const uint8_t Sys_Sys1[][20+1]=
 {
 	{"ÒÇÆ÷ÐÍºÅ    2520B"},
-	{"Èí¼þ°æ±¾  Ver:2.0"},
+	{"Èí¼þ°æ±¾  Ver:2.1"},
 	{"Ó²¼þ°æ±¾  Ver:1.0"},
 	{"ÒÇÆ÷±àºÅ"},
 //	{"ÕËºÅ    "},
@@ -837,7 +840,7 @@ const uint8_t Sys_Sys1[][20+1]=
 const uint8_t Sys_Sys1_E[][20+1]=
 {
 	{"INST MODEL: 2520B "},
-	{"SOFT VER:   Ver:2.0"},
+	{"SOFT VER:   Ver:2.1"},
 	{"HARD VER:   Ver:1.0"},
 	{"SERIALNO:"},
 

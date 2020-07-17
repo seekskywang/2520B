@@ -811,7 +811,10 @@ void Test_Process(void)
 															Write_Usbdata ( "Times   Resistance		Voltage		Sorting\r\n" ,27);	
 														else
 															Write_Usbdata ( "时间     电阻		电压		分选\r\n" ,27);	
-                            usb_oenflag=1;                                
+								if (rc == OK)
+								{
+									usb_oenflag=1; 
+								}								
                     
                             } 
                         } 
@@ -1492,11 +1495,16 @@ void Setup_Process(void)
 					if(Button_Page.index==0)
 						Button_Page.index=12;
 					else
-					if(Button_Page.index>6)
+					if(Button_Page.index>7&&Button_Page.index < 10)
+					{
+						Button_Page.index-=7;
+					}else if(Button_Page.index<3){
+						Button_Page.index+=7;
+					}else if(Button_Page.index >=3 && Button_Page.index <= 7){
+						Button_Page.index+=6;
+					}else if(Button_Page.index >=10){
 						Button_Page.index-=6;
-					else
-						Button_Page.index+=5;
-					
+					}
 						
 				break;
 				case Key_RIGHT:
