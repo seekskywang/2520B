@@ -516,9 +516,14 @@ void Test_Process(void)
 		//1125  1.171  8.84
 		
 
+		if(Test_Dispvalue.Rangedisp == 0 && ddd < 2000){
+			ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
+			Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].ad_value);
+		}else{
+			ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp+1].standard,
+			Save_Res.Debug_Value[Test_Dispvalue.Rangedisp+1].ad_value);
+		}
 		
-		ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
-		Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].ad_value);
         if(ddd>32000000)
 		{
            nodisp_v_flag=1;
@@ -528,9 +533,9 @@ void Test_Process(void)
             nodisp_v_flag=0;
 		}
 		if(Test_Unit.V_dot==3)
-			eee=Debug_Res(eee,Save_Res.Debug_Value[4].standard,Save_Res.Debug_Value[4].ad_value);
-		else
 			eee=Debug_Res(eee,Save_Res.Debug_Value[5].standard,Save_Res.Debug_Value[5].ad_value);
+		else
+			eee=Debug_Res(eee,Save_Res.Debug_Value[6].standard,Save_Res.Debug_Value[6].ad_value);
 		
 		if(nodisp_v_flag)
             eee=0;
@@ -3491,13 +3496,19 @@ void Use_DebugProcess(void)
 			}
 			
 			Disp_Debug_Reference(&Button_Page,eee,ddd);
-			if(Button_Page.index-1<4)
-				Save_Res.Debug_Value[Button_Page.index-1].ad_value=ddd/(pow(10,Button_Page.index));
+			if(Button_Page.index-1<5){
+				if(Button_Page.index == 0)
+				{
+					Save_Res.Debug_Value[Button_Page.index-1].ad_value=ddd/(pow(10,Button_Page.index))*10;
+				}else{
+					Save_Res.Debug_Value[Button_Page.index-1].ad_value=ddd/(pow(10,Button_Page.index-1));
+				}
+			}
 				//Input_int((int8_t *)Test_Dispvalue.Main_valuebuff);
-			else
-				Save_Res.Debug_Value[Button_Page.index-1].ad_value=eee/pow(10,Button_Page.index-5);
+			else{
+				Save_Res.Debug_Value[Button_Page.index-1].ad_value=eee/pow(10,Button_Page.index-6);
 				//Input_int((int8_t *)Test_Dispvalue.Secondvaluebuff);
-
+			}
 		key=HW_KeyScsn();
 		if(key==0xff)
 		{

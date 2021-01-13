@@ -946,6 +946,7 @@ const uint8_t User_Check_main_E[][12+1]=
 
 const uint8_t User_Check_Item[][12+1]=
 {
+	{"1.00 mΩ"},
 	{"10.00mΩ"},
 	{"100.0mΩ"},
 	{"1.000 Ω"},
@@ -3050,7 +3051,7 @@ void Disp_LimitSEt_value(Button_Page_Typedef* Button_Page)
 void Disp_Debug_Reference(Button_Page_Typedef* Button_Page,float eee,float ddd)
 {
 	if(Button_Page->index)
-	if(Button_Page->index>4)
+	if(Button_Page->index>5)
 	{
 		
 		V_BCD_Int(eee);
@@ -3067,7 +3068,7 @@ void Disp_Debug_Reference(Button_Page_Typedef* Button_Page,float eee,float ddd)
 
 
 }
-const vu8 Debug_Dot[DEBUG_RANGE]={2,1,3,2,3,2};
+const vu8 Debug_Dot[DEBUG_RANGE]={3,2,1,3,2,3,2};
 //显示设置参数的值Setup_Valueall
 void Disp_Debug_value(Button_Page_Typedef* Button_Page)
 {

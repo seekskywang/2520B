@@ -88,7 +88,7 @@
 
 #define NUM_LENTH 			(5)//显示长度
 #define NUM_FREQ 			(33+4)//显示长度
-#define DEBUG_RANGE			(4+2)
+#define DEBUG_RANGE			(5+2)
 
 #define SYS_MAX				(12)
 //==========================================================

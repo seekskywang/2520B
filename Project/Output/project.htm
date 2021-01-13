@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Output\project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Output\project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Jul 08 15:55:13 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Jul 22 09:19:43 2020
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2077,11 +2077,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
-<P><STRONG><a name="[15c]"></a>R_Test_Comp</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, test.o(.text))
+<P><STRONG><a name="[15d]"></a>R_Test_Comp</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, test.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
-<P><STRONG><a name="[15b]"></a>V_Test_Comp</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, test.o(.text))
+<P><STRONG><a name="[15c]"></a>V_Test_Comp</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, test.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
@@ -2130,7 +2130,7 @@ Global Symbols
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
 
-<P><STRONG><a name="[8e]"></a>Test_Process</STRONG> (Thumb, 2402 bytes, Stack size 248 bytes, test.o(.text))
+<P><STRONG><a name="[8e]"></a>Test_Process</STRONG> (Thumb, 2514 bytes, Stack size 248 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 564<LI>Call Chain = Test_Process &rArr; MODS_Poll &rArr; RecHandle &rArr; MODS_03H &rArr; MODS_SendWithCRC &rArr; UART3SEND &rArr; UARTPutChar &rArr; UART_Send
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MS_Init
@@ -2141,8 +2141,8 @@ Global Symbols
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BCDtoInt
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VBCDtoInt
 <LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Debug_Res
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;V_Test_Comp
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;R_Test_Comp
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;V_Test_Comp
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;R_Test_Comp
 <LI><a href="#[153]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Comp_prompt
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_Usbdata
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MODS_Poll
@@ -2170,8 +2170,8 @@ Global Symbols
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ClearInt
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delayMs
-<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
@@ -2205,7 +2205,7 @@ Global Symbols
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Disp_Set_CompNum
 </UL>
 
-<P><STRONG><a name="[162]"></a>Disp_Set_CompNum</STRONG> (Thumb, 74 bytes, Stack size 96 bytes, test.o(.text))
+<P><STRONG><a name="[162]"></a>Disp_Set_CompNum</STRONG> (Thumb, 92 bytes, Stack size 96 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = Disp_Set_CompNum &rArr; Input_Set_Cov &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Disp_NumKeyboard_Set
@@ -2228,7 +2228,7 @@ Global Symbols
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup_Process
 </UL>
 
-<P><STRONG><a name="[8f]"></a>Setup_Process</STRONG> (Thumb, 1428 bytes, Stack size 64 bytes, test.o(.text))
+<P><STRONG><a name="[8f]"></a>Setup_Process</STRONG> (Thumb, 1412 bytes, Stack size 64 bytes, test.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 408<LI>Call Chain = Setup_Process &rArr; Disp_Set_Num &rArr; Time_Set_Cov &rArr; pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Disp_Set_Num
@@ -2256,8 +2256,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[165]"></a>Test_Comp</STRONG> (Thumb, 316 bytes, Stack size 72 bytes, test.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
+<BR><BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
@@ -2272,7 +2272,7 @@ Global Symbols
 <LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Range_Process
 </UL>
 
-<P><STRONG><a name="[167]"></a>Range_Process</STRONG> (Thumb, 414 bytes, Stack size 24 bytes, test.o(.text), UNUSED)
+<P><STRONG><a name="[167]"></a>Range_Process</STRONG> (Thumb, 412 bytes, Stack size 24 bytes, test.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Comp
 <LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_Process
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_Key
@@ -2443,8 +2443,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Use_DebugProcess
 </UL>
 
-<P><STRONG><a name="[90]"></a>Use_DebugProcess</STRONG> (Thumb, 728 bytes, Stack size 80 bytes, test.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = Use_DebugProcess &rArr; Freq_Set_Num &rArr; Disp_NumKeyboard_Set &rArr; WriteString_16 &rArr; WriteOneHzChar_16 &rArr; LCD_ShowFontCN_16 &rArr; LCD_SetPoint
+<P><STRONG><a name="[90]"></a>Use_DebugProcess</STRONG> (Thumb, 816 bytes, Stack size 88 bytes, test.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = Use_DebugProcess &rArr; Freq_Set_Num &rArr; Disp_NumKeyboard_Set &rArr; WriteString_16 &rArr; WriteOneHzChar_16 &rArr; LCD_ShowFontCN_16 &rArr; LCD_SetPoint
 </UL>
 <BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_num
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Freq_Set_Num
@@ -2463,6 +2463,7 @@ Global Symbols
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
@@ -2473,7 +2474,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[175]"></a>Fac_DebugProcess</STRONG> (Thumb, 254 bytes, Stack size 16 bytes, test.o(.text), UNUSED)
+<P><STRONG><a name="[175]"></a>Fac_DebugProcess</STRONG> (Thumb, 256 bytes, Stack size 16 bytes, test.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_Beep
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HW_KeyScsn
 </UL>
@@ -4540,6 +4541,7 @@ Global Symbols
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BCDtoInt
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Inttofloat
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Time_Set_Cov
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Use_DebugProcess
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pow
 </UL>
@@ -4700,7 +4702,7 @@ Global Symbols
 
 <P><STRONG><a name="[2b0]"></a>_ffltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu), UNUSED)
 
-<P><STRONG><a name="[15d]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf))
+<P><STRONG><a name="[15a]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_cfcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Comp
@@ -4748,7 +4750,7 @@ Global Symbols
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
 </UL>
 
-<P><STRONG><a name="[15a]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, frleqf.o(x$fpl$frleqf))
+<P><STRONG><a name="[15b]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, frleqf.o(x$fpl$frleqf))
 <BR><BR>[Called By]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Comp
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Process
 </UL>
