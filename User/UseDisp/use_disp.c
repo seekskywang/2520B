@@ -819,7 +819,7 @@ const uint8_t Sys_Sys[][20+1]=
 const uint8_t Sys_Sys_E[][20+1]=
 {
 	{"INST MODEL: jk2520B "},
-	{"SOFT VER:   Ver:2.2"},
+	{"SOFT VER:   Ver:2.3"},
 	{"HARD VER:   Ver:1.0"},
 	{"SERIALNO:"},
 
@@ -828,7 +828,7 @@ const uint8_t Sys_Sys_E[][20+1]=
 const uint8_t Sys_Sys1[][20+1]=
 {
 	{"ÒÇÆ÷ÐÍºÅ    2520B"},
-	{"Èí¼þ°æ±¾  Ver:2.2"},
+	{"Èí¼þ°æ±¾  Ver:2.3"},
 	{"Ó²¼þ°æ±¾  Ver:1.0"},
 	{"ÒÇÆ÷±àºÅ"},
 //	{"ÕËºÅ    "},
@@ -840,7 +840,7 @@ const uint8_t Sys_Sys1[][20+1]=
 const uint8_t Sys_Sys1_E[][20+1]=
 {
 	{"INST MODEL: 2520B "},
-	{"SOFT VER:   Ver:2.2"},
+	{"SOFT VER:   Ver:2.3"},
 	{"HARD VER:   Ver:1.0"},
 	{"SERIALNO:"},
 

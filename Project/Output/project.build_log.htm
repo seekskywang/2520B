@@ -28,6 +28,8 @@ Project File Date:  12/09/2019
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
 compiling use_disp.c...
+..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
+  #define SDRAM_SIZE               0x4000000    // 512Mbit
 ..\User\UseDisp\use_disp.c(1675): warning:  #175-D: subscript out of range
         if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
 ..\User\UseDisp\use_disp.c(1677): warning:  #175-D: subscript out of range
@@ -62,12 +64,12 @@ compiling use_disp.c...
         UARTPuts( LPC_UART0, Send_buff);
 ..\User\UseDisp\use_disp.c(4835): warning:  #177-D: variable "pt"  was declared but never referenced
         vu8 *pt;
-..\User\UseDisp\use_disp.c: 17 warnings, 0 errors
+..\User\UseDisp\use_disp.c: 18 warnings, 0 errors
 linking...
-Program Size: Code=77442 RO-data=428566 RW-data=328 ZI-data=21456  
+Program Size: Code=77434 RO-data=428566 RW-data=328 ZI-data=21456  
 FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 17 Warning(s).
-Build Time Elapsed:  00:00:01
+".\Output\project.axf" - 0 Error(s), 18 Warning(s).
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
