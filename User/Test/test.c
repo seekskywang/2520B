@@ -405,7 +405,7 @@ void Test_Process(void)
 				delayMs(1,1000);
 			}
 			powerontest = 0;
-			Send_Request();
+//			Send_Request();
 			trip_flag=0;
 			return_flag=1;
 			delayMs(1,500);
@@ -424,7 +424,7 @@ void Test_Process(void)
 				case 0:
 					if(Save_Res.Set_Data.trip==0 && u3sendflag ==0)
 					{
-						Send_Request();
+//						Send_Request();
 						return_flag=1;
 					}
 					
