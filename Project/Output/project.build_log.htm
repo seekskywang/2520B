@@ -3,30 +3,61 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.25.3.0
-Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+IDE-Version: ¦ÌVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
 License Information: 1 Microsoft, Microsoft, LIC=03C6R-KIDXE-2Z1W4-FI5SL-E8BHU-R7F4D
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain:       MDK-ARM Plus  Version: 5.37.0.0
 Toolchain Path:  E:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
 Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
 Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
-CPU DLL:         SARMCM3.DLL V5.25.2.0
-Dialog DLL:      DARMP1.DLL V1.27.0.0
-Target DLL:      Segger\JL2CM3.dll V2.99.29.0
-Dialog DLL:      TARMP1.DLL V1.26.0.0
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMP1.DLL V1.28.1.0
+Target DLL:      Segger\JL2CM3.dll V2.99.42.0
+Dialog DLL:      TARMP1.DLL V1.27.1.0
  
 <h2>Project:</h2>
 F:\2520B\Project\project.uvproj
-Project File Date:  12/09/2019
+Project File Date:  02/02/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
+compiling EX_SDRAM.c...
+..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
+  #define SDRAM_SIZE               0x4000000    // 512Mbit
+..\User\EX_SDRAM\EX_SDRAM.c: 1 warning, 0 errors
+compiling main.c...
+..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
+  #define SDRAM_SIZE               0x4000000    // 512Mbit
+..\User\main.c(107): warning:  #177-D: variable "rc"  was declared but never referenced
+        uint8_t key,rc;
+..\User\main.c: 2 warnings, 0 errors
+compiling timer.c...
+compiling lpc177x_8x_lcd.c...
+..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
+  #define SDRAM_SIZE               0x4000000    // 512Mbit
+..\User\hzk.h(1100): warning:  #375-D: declaration requires a typedef name
+  };
+..\User\LCD\lpc177x_8x_lcd.c(52): warning:  #177-D: variable "pDst"  was declared but never referenced
+        unsigned long *pDst = (unsigned long *)LCD_VRAM_BASE_ADDR;
+..\User\LCD\lpc177x_8x_lcd.c(513): warning:  #177-D: variable "i"  was declared but never referenced
+      uint16_t i,j;
+..\User\LCD\lpc177x_8x_lcd.c(760): warning:  #177-D: variable "usIndex"  was declared but never referenced
+        uint16_t usIndex=0;
+..\User\LCD\lpc177x_8x_lcd.c: 5 warnings, 0 errors
+compiling logo.c...
+compiling AsciiLib.c...
+compiling TouchPanel.c...
+..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
+  #define SDRAM_SIZE               0x4000000    // 512Mbit
+..\User\TouchPanel\TouchPanel.c(373): warning:  #223-D: function "LCD_SetPoint" declared implicitly
+    LCD_SetPoint(Xpos,Ypos,Blue);     /* Center point */
+..\User\TouchPanel\TouchPanel.c: 2 warnings, 0 errors
 compiling use_disp.c...
 ..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
   #define SDRAM_SIZE               0x4000000    // 512Mbit
@@ -65,11 +96,106 @@ compiling use_disp.c...
 ..\User\UseDisp\use_disp.c(4835): warning:  #177-D: variable "pt"  was declared but never referenced
         vu8 *pt;
 ..\User\UseDisp\use_disp.c: 18 warnings, 0 errors
+compiling key.c...
+compiling test.c...
+..\User\EX_SDRAM/EX_SDRAM.H(55): warning:  #47-D: incompatible redefinition of macro "SDRAM_SIZE"  (declared at line 31)
+  #define SDRAM_SIZE               0x4000000    // 512Mbit
+..\User\Test\test.c(168): warning:  #223-D: function "RecHandle" declared implicitly
+          RecHandle();
+..\User\Test\test.c(99): warning:  #177-D: variable "addr"  was declared but never referenced
+        uint16_t addr;
+..\User\Test\test.c(100): warning:  #177-D: variable "crc1"  was declared but never referenced
+        static uint16_t crc1;
+..\User\Test\test.c(341): warning:  #177-D: variable "lock_flag"  was declared but never referenced
+        vu8 lock_flag=0;
+..\User\Test\test.c(345): warning:  #177-D: variable "sendtest"  was declared but never referenced
+      vu8 sendtest[5] ={1,2,3,4,5};
+..\User\Test\test.c(3764): warning:  #550-D: variable "kind"  was set but never used
+        u8 kind=0xff;
+..\User\Test\test.c(3866): warning:  #177-D: variable "i"  was declared but never referenced
+        vu8 i;
+..\User\Test\test.c(5194): warning:  #550-D: variable "bytes_written"  was set but never used
+      uint32_t  bytes_written;
+..\User\Test\test.c: 9 warnings, 0 errors
+compiling GlobalValue.c...
+assembling startup_LPC177x_8x.s...
+compiling system_LPC177x_8x.c...
+compiling core_cm3.c...
+compiling lpc177x_8x_gpio.c...
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(347): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO0IntStatR)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(349): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO2IntStatR)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(351): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO0IntStatF)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(353): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO2IntStatF)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(707): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(715): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(751): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(758): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(786): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(814): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(837): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c: 11 warnings, 0 errors
+compiling lpc177x_8x_systick.c...
+compiling lpc177x_8x_clkpwr.c...
+compiling lpc177x_8x_ssp.c...
+compiling lpc177x_8x_uart.c...
+compiling debug_frmwrk.c...
+..\Libraries\Drivers\source\debug_frmwrk.c(492): warning:  #223-D: function "vsprintf" declared implicitly
+      vsprintf((char *)buffer, (char const *)format, vArgs);
+..\Libraries\Drivers\source\debug_frmwrk.c(490): warning:  #177-D: variable "tmp"  was declared but never referenced
+              char      *tmp;
+..\Libraries\Drivers\source\debug_frmwrk.c(677): warning:  #177-D: variable "rxbuf"  was declared but never referenced
+        uint8_t *rxbuf;
+..\Libraries\Drivers\source\debug_frmwrk.c(864): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(buf, _pBuf, _ucLen);
+..\Libraries\Drivers\source\debug_frmwrk.c(881): warning:  #177-D: variable "dat"  was declared but never referenced
+      static uint8_t Status,dat;
+..\Libraries\Drivers\source\debug_frmwrk.c(882): warning:  #177-D: variable "rxbuf"  was declared but never referenced
+      uint8_t *rxbuf;
+..\Libraries\Drivers\source\debug_frmwrk.c(1110): warning:  #550-D: variable "reg"  was set but never used
+      uint16_t reg;
+..\Libraries\Drivers\source\debug_frmwrk.c(1111): warning:  #550-D: variable "value"  was set but never used
+        uint16_t value;
+..\Libraries\Drivers\source\debug_frmwrk.c(726): warning:  #177-D: function "MODS_SendAckErr"  was declared but never referenced
+  static void MODS_SendAckErr(uint8_t _ucErrCode)
+..\Libraries\Drivers\source\debug_frmwrk.c(746): warning:  #177-D: function "MODS_SendAckOk"  was declared but never referenced
+  static void MODS_SendAckOk(void)
+..\Libraries\Drivers\source\debug_frmwrk.c: 10 warnings, 0 errors
+compiling lpc177x_8x_pinsel.c...
+compiling lpc177x_8x_eeprom.c...
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(109): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint8_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(119): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint16_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(129): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint32_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(198): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint8_t *)data)++) = (uint8_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(208): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint16_t *)data)++) = (uint16_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(217): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint32_t *)data)++) = (uint32_t)(LPC_EEPROM ->RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c: 6 warnings, 0 errors
+compiling lpc177x_8x_rtc.c...
+compiling usbhost_fat.c...
+compiling usbhost_lpc17xx.c...
+compiling usbhost_ms.c...
+compiling rtc.c...
 linking...
 Program Size: Code=77434 RO-data=428566 RW-data=328 ZI-data=21456  
 FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 18 Warning(s).
-Build Time Elapsed:  00:00:02
+".\Output\project.axf" - 0 Error(s), 64 Warning(s).
+Build Time Elapsed:  00:00:13
 </pre>
 </body>
 </html>
