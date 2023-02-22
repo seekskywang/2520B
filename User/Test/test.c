@@ -448,6 +448,11 @@ void Test_Process(void)
 					Send_Freq(&Uart);
 				
 					break;
+				case 3:
+				{
+					Uart_Send_Flag=0;
+					Send_Clear(&Uart);
+				}break;
 				default:
 					//Send_Request();
 					break;
@@ -516,13 +521,13 @@ void Test_Process(void)
 		//1125  1.171  8.84
 		
 
-		if(Test_Dispvalue.Rangedisp == 0 && ddd < 2000){
-			ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
-			Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].ad_value);
-		}else{
-			ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp+1].standard,
-			Save_Res.Debug_Value[Test_Dispvalue.Rangedisp+1].ad_value);
-		}
+//		if(Test_Dispvalue.Rangedisp == 0 && ddd < 2000){
+//			ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].standard,
+//			Save_Res.Debug_Value[Test_Dispvalue.Rangedisp].ad_value);
+//		}else{
+//			ddd=Debug_Res(ddd,Save_Res.Debug_Value[Test_Dispvalue.Rangedisp+1].standard,
+//			Save_Res.Debug_Value[Test_Dispvalue.Rangedisp+1].ad_value);
+//		}
 		
         if(ddd>32000000)
 		{
@@ -626,7 +631,7 @@ void Test_Process(void)
 			*(UserBuffer+6)=0xa6;
 			*(UserBuffer+7)=0xb8;
 			*(UserBuffer+8)='	';
-			Disp_R_X();//显示名称
+			Disp_R_X();//显示单位
 			if(nodisp_v_flag == 1)
 			{
 				if(eee > 0 && eee < 200)
@@ -930,9 +935,10 @@ void Test_Process(void)
 //					}
 				break;
 				case Key_BIAS:
-					clear_flag=1;
-					Bais_LedOn();
-					Delay(500);
+					Uart_Send_Flag=3;
+//					clear_flag=1;
+//					Bais_LedOn();
+//					Delay(500);
 				break;
 				case Key_REST:
 					Power_Off_led();
@@ -1082,6 +1088,10 @@ void Setup_Process(void)
 					Send_Main_Ord();
 					break;
 				case 2:
+					Send_Freq(&Uart);
+					Delay(100);
+					break;
+				case 3:
 					Send_Freq(&Uart);
 					Delay(100);
 					break;
@@ -1262,7 +1272,8 @@ void Setup_Process(void)
 //							Uart_Send_Flag=2;
 							break;
 						case 7+1:
-							Save_Res.Set_Data.Range=1;
+							if(Save_Res.Set_Data.Range > 1)
+								Save_Res.Set_Data.Range--;
 							Uart_Send_Flag=2;
 							break;
 						case 8+1:
@@ -1346,7 +1357,8 @@ void Setup_Process(void)
 							
 							break;
 						case 7+1:
-							Save_Res.Set_Data.Range=2;
+							if(Save_Res.Set_Data.Range < 6)
+								Save_Res.Set_Data.Range++;
 							Uart_Send_Flag=2;
 							break;
 						case 8+1:
@@ -3767,24 +3779,44 @@ u8 Uart_Process(void)
 //	if(SaveData.Sys_Setup.Bus_Mode==0)//串口有效
 	{
 		if (ComBuf.rec.end)//接收数据结束
-		{data=1;
+		{
+			data=1;
 			memset(str,'\0',(FRAME_LEN_MAX-FRAME_LEN_MIN+1));//清空缓冲
 			{
 				//memcpy(str,&ComBuf.rec.buf[PDATASTART-1],ComBuf.send.len-FRAME_LEN_MIN);//数据包
 				kind=ComBuf.rec.buf[PFRAMEKIND];//命令字
-				for(i=0;i<6;i++)
+				switch(kind)
 				{
-					Test_Dispvalue.Main_valuebuff[i]=ComBuf.rec.buf[1+i];
-					Test_Dispvalue.Secondvaluebuff[i]=ComBuf.rec.buf[8+i];
-					
+					case FRAME_RANGE_SET:
+						
+					break;
+					case FRAME_CLEAR_OK:
+						WriteString_16(380, 92+55+55+8, "CLEAR!     ",  0);
+					break;
+					case FRAME_CLEAR_FAIL:
+						WriteString_16(380, 92+55+55+8, "CLEAR FAIL!",  0);
+					break;
+					default:
+						for(i=0;i<6;i++)
+						{
+							Test_Dispvalue.Main_valuebuff[i]=ComBuf.rec.buf[1+i];
+		//					Test_Dispvalue.Secondvaluebuff[i]=ComBuf.rec.buf[8+i];
+							
+						}
+						for(i=0;i<8;i++)
+						{
+							Test_Dispvalue.Secondvaluebuff[i]=ComBuf.rec.buf[7+i];
+							
+						}
+						//Test_Dispvalue.Test_R=
+						if(ComBuf.rec.buf[16])
+							Test_Dispvalue.Unit[0]=1;
+						else
+							Test_Dispvalue.Unit[0]=0;
+						
+						Test_Dispvalue.Rangedisp=ComBuf.rec.buf[15];
+					break;
 				}
-				//Test_Dispvalue.Test_R=
-				if(ComBuf.rec.buf[7])
-					Test_Dispvalue.Unit[0]=1;
-				else
-					Test_Dispvalue.Unit[0]=0;
-				
-				Test_Dispvalue.Rangedisp=ComBuf.rec.buf[14];
 					
 
 			}
@@ -5058,7 +5090,7 @@ int32_t BCDtoInt(int8_t *pt)
 		value=0xfffffff;
 		return value;
 	}
-	for(i=0;i<5;i++)
+	for(i=0;i<6;i++)
 	{
 		if(*(pt+1+i)>='0')
 		{
@@ -5068,7 +5100,7 @@ int32_t BCDtoInt(int8_t *pt)
 			
 		}
 		else
-			dot=4-i;
+			dot=5-i;
 	
 	}
 	if(Test_Dispvalue.Unit[0])

@@ -927,14 +927,14 @@ static uint8_t MODS_ReadRegValue(uint16_t reg_addr, uint8_t *reg_value)
 	{
 		case 0:
 		{
-            if(rwatch > 30000000)
-            {
-                sendrvalue = 0xffffffff;
-				sendunit = 1;
-            }else{
-                sendrvalue = rwatch;
-                sendunit = 0;
-            }
+			if(rwatch > 30000000)
+			{
+					sendrvalue = 0xffffffff;
+					sendunit = 1;
+			}else{
+					sendrvalue = rwatch;
+					sendunit = 0;
+			}
                 
 			
 		}break;

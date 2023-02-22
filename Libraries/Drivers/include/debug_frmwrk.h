@@ -131,6 +131,11 @@ extern Com_TypeDef ComBuf3;
 #define FRAME_CLR_BOOT_NUM		(0xF2)	//清开机次数帧
 #define FRAME_WRITE_SN			(0xF3)	//写序列号帧
 
+#define FRAME_RANGE_SET			(0x52)	//设置量程
+#define FRAME_CLEAR					(0x43)	//清零
+#define FRAME_CLEAR_OK			(0x50)	//清零
+#define FRAME_CLEAR_FAIL		(0x46)	//清零
+
 //帧位置定义
 #define PFRAMEHEAD				(0)	//帧头位置
 #define PFRAMEKIND				(1)	//帧类型位置

@@ -433,14 +433,24 @@ const uint8_t User_Range[][10+1]=
     {"100mΩ "},
     {"1Ω    "},
     {"10Ω   "},
-    {"100kΩ"},
+    {"100Ω  "},
+		{"1000Ω "},
+};
 
+const uint8_t Auto_Range[][10+1]=
+{
+		{"        "},
+    {"(10mΩ )"},
+    {"(100mΩ)"},
+    {"(1Ω   )"},
+    {"(10Ω  )"},
+    {"(100Ω )"},
+		{"(1000Ω)"},
 };
 
 const uint8_t RangeButton_Tip[][7+1]=  //频率选择时候的下面的提示符号
 {
     {"AUTO"},
-    {"HOLD"},
     {"DECR -"},
     {"INCR +"},
 
@@ -2754,7 +2764,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 		case 7+1:
 			Colour.Fword=White;
 			Colour.black=LCD_COLOR_TEST_BUTON;
-			for(i=0;i<5;i++)
+			for(i=0;i<3;i++)
 			{	
 				
 				if(Save_Res.Sys_Setvalue.lanage && i == 0 )
@@ -2762,7 +2772,7 @@ void DispSet_value(Button_Page_Typedef* Button_Page)
 						WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, "Auto",  0);
 						
 				else
-						WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, User_Range[i],  0);
+						WriteString_16(BUTTOM_X_VALUE+i*BUTTOM_MID_VALUE, BUTTOM_Y_VALUE, RangeButton_Tip[i],  0);
 			}
 			break;
 		case 8+1:
@@ -4239,22 +4249,22 @@ void Disp_R_X(void)
 {
 	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr == 2)
 	{
-		LCD_ShowFontCN_40_55(60,92,40,55,(uint8_t*)Out_Assic+5*40*55/8);//R
+		LCD_ShowFontCN_40_55(60-20,92,40,55,(uint8_t*)Out_Assic+5*40*55/8);//R
 	//	
 		
-		LCD_ShowFontCN_40_55(60+40*7,92,40,55,(uint8_t*)Out_Assic+20*40*55/8);//Ω
+		LCD_ShowFontCN_40_55(60+40*7+32+16,92,40,55,(uint8_t*)Out_Assic+20*40*55/8);//Ω
 	
 	
-		if(Test_Unit.Res_dot)
-			LCD_ShowFontCN_40_55(60+40*6,92,40,55, (uint8_t*)Out_Assic+22*40*55/8);//空格
+		if(Test_Dispvalue.Unit[0])
+			LCD_ShowFontCN_40_55(60+40*6+32+16,92,40,55, (uint8_t*)Out_Assic+22*40*55/8);//空格
 		else
-			LCD_ShowFontCN_40_55(60+40*6,92,40,55, (uint8_t*)Out_Assic+17*40*55/8);//m
+			LCD_ShowFontCN_40_55(60+40*6+32+16,92,40,55, (uint8_t*)Out_Assic+17*40*55/8);//m
 	}
 	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr == 1)
 	{
-		LCD_ShowFontCN_40_55(60,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
+		LCD_ShowFontCN_40_55(60-20,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
 	//	
-		LCD_ShowFontCN_40_55(60+40*7,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
+		LCD_ShowFontCN_40_55(60+40*7+32+16,92+55,40,55,(uint8_t*)Out_Assic+27*40*55/8);//V
 	}
 }
 
@@ -4448,17 +4458,24 @@ void Disp_Button_Fun_Set(vu16 xpos,vu16 ypos,vu8 * Disp_Item,Button_Page_Typedef
 }
 void Disp_Testvalue(int8_t chosen,int32_t eee )
 {
+	Colour.black = LCD_COLOR_TEST_BACK;
+	if(Save_Res.Set_Data.Range == 0)
+				WriteString_16(LIST2+88+32, FIRSTLINE, Auto_Range[Test_Dispvalue.Rangedisp],  0);
+	
+	Colour.black = LCD_COLOR_TEST_MID;
 	if(Save_Res.Set_Data.dispvr == 0 || Save_Res.Set_Data.dispvr ==2)
 	{
 		if(nodisp_v_flag == 1 && Save_Res.Set_Data.openbeep==0)
 		{
 			Colour.Fword=LCD_COLOR_WHITE;
-			WriteString_Big(100+32,92 ,DispBuf);
+//			WriteString_Big(100+32,92 ,DispBuf);
+			WriteString_Big(100+32,92 ,Test_Dispvalue.Main_valuebuff);
 		}else{
 			if(chosen==RL_FAIL||chosen==RH_FAIL||chosen==ALL_FAIL)
 				Colour.Fword=LCD_COLOR_BLUE;
 			//WriteString_Big(100,92 ,Test_Dispvalue.Main_valuebuff);
-			WriteString_Big(100+32,92 ,DispBuf);
+//			WriteString_Big(100+32,92 ,DispBuf);
+			WriteString_Big(100+32,92 ,Test_Dispvalue.Main_valuebuff);
 			
 		}
 	}
@@ -4485,24 +4502,26 @@ void Disp_Testvalue(int8_t chosen,int32_t eee )
 				negvalm = 0;
 			}
 
-			if(eee == 0)
-			{
-				WriteString_Big(100,92+55 ," ");
-			}else{
-				WriteString_Big(100,92+55 ,"-");
-			}
+//			if(eee == 0)
+//			{
+//				WriteString_Big(100-32,92+55 ," ");
+//			}else{
+//				WriteString_Big(100-32,92+55 ,"-");
+//			}
 			if(eee <=0 && eee > -200){
 				Plc_PosV();
 			}else{
 				Plc_NegV();
 			}
 		}
-		if(eee > 30 || eee < -30)
-		{
-			WriteString_Big(100+32,92+55 ,DispBuf);
-		}else{
-			WriteString_Big(100+32,92+55 ,"0.000");
-		}
+//		if(eee > 30 || eee < -30)
+//		{
+////			WriteString_Big(100+32,92+55 ,DispBuf);
+			WriteString_Big(100,92+55 ,Test_Dispvalue.Secondvaluebuff);
+			
+//		}else{
+//			WriteString_Big(100+32,92+55 ,"0.0000");
+//		}
 	}
 	Colour.Fword=LCD_COLOR_WHITE;
 	Colour.black=LCD_COLOR_TEST_BACK;
@@ -4532,7 +4551,7 @@ void Disp_Big_SecondUnit(vu8 unit,vu8 unit1)
 
 void Send_Freq(Send_Ord_Typedef *ord)
 {
-	vu8 Send_buff[10]={0xAB,0X30};
+	vu8 Send_buff[10]={0xAB,0x52};
 	
 	Send_buff[2]=Save_Res.Set_Data.Range;
 	Send_buff[3]=0xbf;
@@ -4543,6 +4562,18 @@ void Send_Freq(Send_Ord_Typedef *ord)
 	//_printf("s%",(const)Send_buff);
 
 }
+
+void Send_Clear(Send_Ord_Typedef *ord)
+{
+	vu8 Send_buff[10]={0xAB,0X43,0xbf};
+//	Send_buff[6]=0X80;//校验和 
+//	Send_buff[7]=0XBF;
+//	Send_buff[8]=0;
+	UARTPuts( LPC_UART0, Send_buff);
+	//_printf("s%",(const)Send_buff);
+
+}
+
 void Send_UartStart(void)
 {
 	vu8 Send_buff[24]={0xAB,0X01,23,0x06};
@@ -4590,7 +4621,7 @@ void Send_Request(void)
 }
 void Send_Uart3(uint8_t *buff)
 {
-	vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
+	vu8 Send_buff[10]={0xAB,0X00,0xbf};
 	
 //	Send_buff[3]=ord->Ordel;
 //	Send_buff[4]=ord->name;
