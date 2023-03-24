@@ -329,6 +329,7 @@ void Power_Process(void)
 void Test_Process(void)
 {
 	char newfile[30];
+	char filename[30];
 	static vu16 j;
 	Button_Page_Typedef Button_Page;
 //	Main_Second_TypeDed Main_Second;//主参数和幅参赛的序号
@@ -687,7 +688,30 @@ void Test_Process(void)
 			strcat((char *)send_usbbuff,(char *)UserBuffer);
 			if(Save_Res.Sys_Setvalue.u_flag)
 			{
-					Write_Usbdata ( send_usbbuff,38);//27
+				strcpy(filename,"0:/"); 
+				strcat(filename,(char*)Save_Res.Sys_Setvalue.textname); 
+				strcat(filename,(char*)".TXT");
+		 //     
+				res = f_open( &fsrc , filename ,  FA_WRITE);
+		//		fdw = FILE_Open((uint8_t *)filename, RDWR);
+				if (res == 0) 
+				{
+					usb_oenflag=1;
+					f_lseek(&fsrc,fsrc.fsize);
+		//			bytes_written = FILE_Write(fdw, buffer, num);//MAX_BUFFER_SIZE);
+
+					res = f_write(&fsrc, &send_usbbuff, 38, &br);     
+					f_close(&fsrc); 
+		//			usb_oenflag=1;
+
+		//			bytes_written = FILE_Write(fdw, buffer, num);//MAX_BUFFER_SIZE);
+
+		//			FILE_Close(fdw);
+								
+				} 
+				else
+					usb_oenflag=0;
+//					Write_Usbdata ( send_usbbuff,38);//27
 			}
 			else
 			{
@@ -5255,7 +5279,7 @@ void  Write_Usbdata ( uint8_t  *buffer,uint32_t num)
 			f_lseek(&fsrc,fsrc.fsize);
 //			bytes_written = FILE_Write(fdw, buffer, num);//MAX_BUFFER_SIZE);
 
-			res = f_write(&fsrc, &buffer, 30, &br);     
+			res = f_write(&fsrc, buffer, num, &br);     
 			f_close(&fsrc); 
 //			usb_oenflag=1;
 
